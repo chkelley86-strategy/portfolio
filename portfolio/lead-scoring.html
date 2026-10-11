@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lead Scoring · Charlie Kelley</title>
+  <meta name="description" content="Case study: redesigning HubSpot Lead Scoring to turn marketing signals into sales action.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="cs">
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="name" href="index.html">Charlie Kelley</a>
+    <ul>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#approach">Approach</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li class="hide-sm"><a href="Charlie-Kelley-Resume.pdf">Resume</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <header class="cs-hero">
+    <div class="wrap">
+      <p class="eyebrow">Case study · HubSpot · AI</p>
+      <h1>Lead Scoring: turning marketing signals into sales action</h1>
+      <p class="lead text">Marketers were guessing which signals mattered, and sales teams couldn't act on the scores they saw. I led design for a rebuilt Lead Scoring app and a 2026 vision that takes scoring from assumptions to data-backed precision.</p>
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Lead product designer</dd></div>
+        <div><dt>Team</dt><dd>PM, front-end and back-end tech leads, design</dd></div>
+        <div><dt>Timeframe</dt><dd>2025–2026</dd></div>
+        <div><dt>Principle</dt><dd><span class="tag">Nudge with evidence</span></dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat"><b>+17%</b><span>more scores created after reducing start-up friction</span></div>
+        <div class="stat"><b>25k</b><span>scores created by 30k users in the new app</span></div>
+        <div class="stat"><b>7</b><span>customers in end-to-end journey research</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="ai-callout text">
+        <p class="eyebrow">Where AI shows up</p>
+        <ul class="clean">
+          <li><strong>Discover AI rules:</strong> business intelligence surfaces the rules that actually convert in your portal, ranked by conversion rate and reach.</li>
+          <li><strong>Confidence labels:</strong> every suggested rule shows how much data backs it, from high confidence to "needs more data."</li>
+          <li><strong>Point recommendations:</strong> suggested point values that hit the intended spread of low, medium and high leads.</li>
+          <li><strong>Rule insights:</strong> plain-language explanations of each rule's reach and impact, plus suggestions for similar signals.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <h2>The problem</h2>
+        <p>AI changed the buyer journey from a funnel to an hourglass: fewer leads arrive, but they arrive informed and ready to buy. Prioritizing the right lead at the right time now matters more than volume, but HubSpot's lead scoring couldn't keep up.</p>
+        <p>Competitors were marketing instant setup and AI-built models. HubSpot's advantage was native data across the whole customer journey, but users couldn't get to it. Building a first score took more than two hours.</p>
+      </div>
+      <table class="map">
+        <thead><tr><th>Pain point</th><th>What we heard</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Marketers are guessing.</strong> No good starting point and no guidance on which signals matter.</td><td>"You need like a PhD in HubSpot to get things going."</td></tr>
+          <tr><td><strong>Sales can't act.</strong> Little insight into what drives a score, and manual handoffs.</td><td>"Information is alright, but it's not fully actionable by the people that need to action on it."</td></tr>
+          <tr><td><strong>Teams can't improve.</strong> Results are hard to interpret and iterate on.</td><td>"I just want to make sure that what I'm building works."</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <h2>Research: mapping the whole job</h2>
+        <p>Instead of studying only the builder screen, I mapped the full scoring journey with seven customers, from planning a score to refining it months later. They ranged from a 10-year HubSpot power user to a one-person marketing team.</p>
+      </div>
+      <figure>
+        <img src="assets/img/ls-research.webp" alt="Journey map across Plan, Build, Review and Test, Route to Sales, Downstream, Monitor and Report, and Refine, with sticky notes for challenges and opportunities" loading="lazy">
+        <figcaption>One participant's row of the journey map, across three phases: creating, actioning, and monitoring and refining.</figcaption>
+      </figure>
+      <div class="text">
+        <h3>What we learned</h3>
+        <ul class="clean">
+          <li><strong>Users tested scores by hand.</strong> One marketer opened and clicked her own emails to "see do the scores work." Nothing in the product showed whether a model was right.</li>
+          <li><strong>The handoff to sales was manual.</strong> MQL to SQL moves happened in calls, exported lists and Slack threads about "weird leads." Several sales teams could see the score but didn't use it.</li>
+          <li><strong>Messy data distorted scores.</strong> Students, job seekers and other non-leads inflated engagement, so users kept tweaking rules.</li>
+          <li><strong>People wanted set-and-forget, then a trend.</strong> They wanted to lock a model in and track month-over-month shifts.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <h2>The vision: three hills</h2>
+        <p>With my PM and tech leads, we framed the 2026 vision around one persona, a growth-focused marketer, and three hills. Each hill names who benefits, what they can do, and why it matters. Each also has its own success metric, so the team could ship in phases and measure each one.</p>
+      </div>
+      <table class="map">
+        <thead><tr><th>Hill</th><th>Outcome</th><th>Target</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Easy to start</strong></td><td>Build a goal-aligned score with no expertise, using expert templates and rationale nudges</td><td>First score in under 30 minutes, down from 2+ hours</td></tr>
+          <tr><td><strong>Confident to use</strong></td><td>Sales sees why a lead is prioritized and acts on it in every tool</td><td>Higher downstream activation of scores</td></tr>
+          <tr><td><strong>Built to evolve</strong></td><td>Verify and improve the model against real outcomes</td><td>Users re-engage after score feedback</td></tr>
+        </tbody>
+      </table>
+      <p class="muted text">We also decided what not to do: no advanced multi-step ML training and no lead-object scoring.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <h2>Design: from a blank slate to data-backed rules</h2>
+        <p>Research pointed to two moments where users stalled. The <strong>cold start</strong>: an empty builder and hundreds of properties, with no idea which three to five rules would move the needle. And the <strong>knowledge plateau</strong>: existing users stuck to obvious rules and never found high-converting signals outside their assumptions. Each sprint went from a design brief to an interaction flow to tested screens.</p>
+        <h3>1. Discover rules with AI</h3>
+        <p>Rather than make users hunt for properties, we flipped the script. Business intelligence ranks candidate rules by conversion rate and reach, and labels each one with a confidence level. Users pick their set of rules and add them to the score in one step.</p>
+      </div>
+      <figure>
+        <img src="assets/img/ls-start.webp" alt="Empty score state with three ways to start: add an event group, add a property group, or discover AI rules" loading="lazy">
+        <figcaption><strong>The jumpstart.</strong> An empty score offers three ways in, including "Discover AI rules," so no one starts from a blank page.</figcaption>
+      </figure>
+      <div class="pair">
+        <figure>
+          <img src="assets/img/ls-discover.webp" alt="Discover rules table listing rules with conversion, reach, conversion rate and confidence" loading="lazy">
+          <figcaption><strong>Step 1: select rules.</strong> Rules ranked by what actually converts in your portal, each with a confidence label.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/ls-assign.webp" alt="Assign points step with a score distribution chart and point recommendations" loading="lazy">
+          <figcaption><strong>Step 2: assign points.</strong> A live distribution and point recommendations show the effect before anything is saved.</figcaption>
+        </figure>
+      </div>
+      <div class="text">
+        <h3>2. Read the model like a sentence</h3>
+        <p>The old builder kept every filter and dropdown in a permanent edit state. That created visual noise and constant scrolling, and it fed the feeling that you need "a PhD in HubSpot." We split the builder into two modes. View mode condenses each rule into a plain-language line, so users can review their whole model at a glance. Clicking a rule opens inline edit mode with the full configuration.</p>
+      </div>
+      <div class="pair">
+        <figure>
+          <img src="assets/img/ls-view.webp" alt="Score builder in view mode with rules shown as readable single lines" loading="lazy">
+          <figcaption><strong>View mode:</strong> the whole model in plain language, easy to audit.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/ls-edit.webp" alt="Score builder with one workflow rule expanded into inline edit controls" loading="lazy">
+          <figcaption><strong>Inline edit:</strong> full controls only where you're working.</figcaption>
+        </figure>
+      </div>
+      <div class="text">
+        <h3>3. Rule insights: see the impact of every rule</h3>
+        <p>To replace hand-testing, every rule gets its own insights: how many contacts it reaches, the average points it adds, and how points are distributed. Plain-language notes flag rules with narrow reach or limited impact, and "similar workflows" suggestions lead users to signals they haven't considered.</p>
+      </div>
+      <figure>
+        <img src="assets/img/ls-insights.webp" alt="Rule insights panel showing contacts reached, average points per contact and distribution of points" loading="lazy">
+        <figcaption><strong>Rule insights</strong> explain each rule's reach and impact in plain language, and point to similar high-converting workflows.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap text">
+      <h2>Impact</h2>
+      <p>Lowering the friction to start a score led to 17% more scores being created. In total, 30k users have created 25k scores in the new app. Usage data also showed where to focus next: many users who start a score don't turn it on, which is exactly the gap the preview and confidence work is built to close.</p>
+      <h2 style="margin-top:1.6em">What I learned</h2>
+      <ul class="clean">
+        <li><strong>Map the whole job, not the screen.</strong> The builder wasn't where scoring failed. The handoff and the months after were.</li>
+        <li><strong>Confidence is a design material.</strong> Users didn't need more rules. They needed to see that their rules worked.</li>
+        <li><strong>Hills keep a big vision shippable.</strong> Three outcomes, each with its own metric, let us phase the work without losing the story.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap next">
+      <a href="index.html#work">&larr; All work</a>
+      <a href="ai-insights.html">Next: AI Insights in Reporting &rarr;</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Charlie Kelley</span>
+    <span><a href="mailto:chkelley86@gmail.com">chkelley86@gmail.com</a> · <a href="https://www.linkedin.com/in/charlie-kelley-4b856020">LinkedIn</a> · <a href="Charlie-Kelley-Resume.pdf">Resume</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

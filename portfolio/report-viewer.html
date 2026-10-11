@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Single Report Viewer · Charlie Kelley</title>
+  <meta name="description" content="Case study: consolidating HubSpot report templates into one platform experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="cs">
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="name" href="index.html">Charlie Kelley</a>
+    <ul>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#approach">Approach</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li class="hide-sm"><a href="Charlie-Kelley-Resume.pdf">Resume</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <header class="cs-hero">
+    <div class="wrap">
+      <p class="eyebrow">Case study · HubSpot · AI</p>
+      <h1>Single Report Viewer: one platform for every report</h1>
+      <p class="lead text">HubSpot Reporting had many disconnected templates doing the same jobs in different ways. I set a vision and led design to consolidate them into one platform experience, cutting duplicate technical overhead and making room for new features like AI insights.</p>
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Product designer, vision and end-to-end design</dd></div>
+        <div><dt>Team</dt><dd>Reporting as a Service (RaaS)</dd></div>
+        <div><dt>Timeframe</dt><dd>2022–2024</dd></div>
+        <div><dt>Principle</dt><dd><span class="tag">Tie every insight to an outcome</span></dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat"><b>+32%</b><span>usage year over year (79M events in 2024)</span></div>
+        <div class="stat"><b>301k</b><span>unique users, up 21.5%</span></div>
+        <div class="stat"><b>2.85 SD</b><span>CSAT increase compared with the previous year</span></div>
+        <div class="stat"><b>683k</b><span>hovers and 99k drilldowns on new interactive components</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="ai-callout text">
+        <p class="eyebrow">Where AI shows up</p>
+        <ul class="clean">
+          <li><strong>AI Insights built in:</strong> plain-language insights shipped as part of the viewer MVP.</li>
+          <li><strong>Predictive display options:</strong> forecasts and anomaly detection plug into any report in the same frame.</li>
+          <li><strong>Platform for AI:</strong> modular report pieces mean insights can be called into other spaces in HubSpot, not just Reporting.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <h2>The problem</h2>
+        <p>In 2022, Reporting was growing more powerful and harder to use. Every new feature was complex to add, and customer feedback showed it.</p>
+        <ul class="clean">
+          <li><strong>Usability:</strong> complex, disconnected entities and systems. We added functionality to users' world without helping them navigate it.</li>
+          <li><strong>Consistency:</strong> many different patterns for the same jobs to be done.</li>
+          <li><strong>No opinionated insights:</strong> users wanted more help finding meaning in their data.</li>
+        </ul>
+      </div>
+      <figure>
+        <img src="assets/img/srv-problem.webp" alt="Line chart of reporting mentions in NPS feedback, showing usability complaints rising while functionality complaints fall" loading="lazy">
+        <figcaption>NPS feedback, 2021–2022: as functionality complaints fell, usability complaints rose. We had added features faster than we helped people navigate them.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <h2>The vision</h2>
+        <ol class="clean">
+          <li><strong>Flow:</strong> help users navigate complexity.</li>
+          <li><strong>Functionality:</strong> deliver new features that deepen users' understanding of their data.</li>
+          <li><strong>Service:</strong> build reusable components across jobs to be done that other teams can use.</li>
+        </ol>
+        <p>Before designing, I defined success in behavior: more report saves, hovers and drilldowns, fewer trips to the report builder, more use of opinionated insights, and higher Reporting CSAT.</p>
+        <h3>Process</h3>
+        <p>Internally, I mapped systems, pitched a vision deck to other teams, inventoried functionality to consolidate templates, and scoped how to deliver value faster. Externally, I gathered pain-point themes from NPS, customer calls and prior research, tested lo-fi ideas with customers, ran a Kano survey to prioritize, and validated hi-fi designs in user testing.</p>
+      </div>
+      <figure>
+        <img src="assets/img/srv-concept.webp" alt="Concept car design of a report viewer with explore panel, summary and resources" loading="lazy">
+        <figcaption>The 2022 "concept car": report context and actions, filters, view switchers, insights and resources in one viewer.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <h2>Consolidating templates into a platform</h2>
+        <p>I inventoried every report template, modeled the shared parts, and defined two building blocks. <strong>Report controls</strong> are one set of controls and customization options available on both custom and out-of-the-box reports. <strong>Report associations</strong> are modular pieces (summary, chart, table, insights, metadata) that can be called into any space in HubSpot.</p>
+      </div>
+      <div class="pair">
+        <figure>
+          <img src="assets/img/srv-model.webp" alt="System model diagram of data, report, filters, display options and modular report pieces" loading="lazy">
+          <figcaption>Modeling the report: data, filters, controls and modular pieces.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/srv-options.webp" alt="Chart options panel with chart type, settings and report metric controls" loading="lazy">
+          <figcaption>One consistent options panel across report types.</figcaption>
+        </figure>
+      </div>
+      <div class="text">
+        <h3>Rescoping for MVP</h3>
+        <p>User testing validated the unified approach. One participant said: "Many of the reports I make are similar so being able to quickly swap out metrics would save an enormous amount of time." We shipped the MVP with single-source report groups, a summary data well, AI Insights, an interactive table and metadata, then followed with unified filters, metric selection, and lite editing for charts and summaries.</p>
+      </div>
+      <div class="pair">
+        <figure>
+          <img src="assets/img/srv-final.webp" alt="Released report viewer with summary metrics above a line chart" loading="lazy">
+          <figcaption>Released: summary data well and chart in one viewer.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/srv-forecast.webp" alt="Report viewer showing a line chart with a forecast band" loading="lazy">
+          <figcaption>Display options such as forecasts plug into the same frame.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap text">
+      <h2>Impact</h2>
+      <p>Report viewer usage grew 32% year over year, to 79M unique events and 301k unique users in 2024. Reporting CSAT rose 2.85 standard deviations compared with the previous year. New interactive components drew 683k hovers and 99k drilldowns, and users saved 28k new reports, a sign of growing reporting maturity. Display options built into the viewer, such as forecasts, anomaly detection and trend lines, were adopted by more than 100k users and improved two-week retention by 30%.</p>
+      <h2 style="margin-top:1.6em">What I learned</h2>
+      <ul class="clean">
+        <li><strong>Build a resilient team.</strong> Plan for what happens if nothing changes and if everything changes, and give the vision room to ride along with other initiatives.</li>
+        <li><strong>Create spaces for cross-team collaboration.</strong> Know when to use lo-fi and when to use hi-fi, and make shared documents people want to work in.</li>
+        <li><strong>Services over spaces.</strong> Make your team valuable to other teams and meet users where they work. It makes pivoting easier.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap next">
+      <a href="ai-insights.html">&larr; AI Insights in Reporting</a>
+      <a href="index.html#work">All work &rarr;</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Charlie Kelley</span>
+    <span><a href="mailto:chkelley86@gmail.com">chkelley86@gmail.com</a> · <a href="https://www.linkedin.com/in/charlie-kelley-4b856020">LinkedIn</a> · <a href="Charlie-Kelley-Resume.pdf">Resume</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
