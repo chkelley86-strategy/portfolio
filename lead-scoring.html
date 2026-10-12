@@ -28,8 +28,8 @@
   <header class="cs-hero">
     <div class="wrap">
       <p class="eyebrow">Case study · HubSpot · AI</p>
-      <h1>Lead Scoring: turning marketing signals into sales action</h1>
-      <p class="lead text">Marketers were guessing which signals mattered, and sales teams couldn't act on the scores they saw. I led design for a rebuilt Lead Scoring app and a 2026 vision that takes scoring from assumptions to data-backed precision.</p>
+      <h1>Lead Scoring: AI building blocks that turn marketing signals into sales action</h1>
+      <p class="lead text">Marketers were guessing which signals mattered, and sales teams couldn't act on the scores they saw. I led design for a rebuilt, AI-first Lead Scoring app: modular components that recommend the right rules and explain their impact wherever users need them.</p>
       <dl class="meta">
         <div><dt>Role</dt><dd>Lead product designer</dd></div>
         <div><dt>Team</dt><dd>PM, front-end and back-end tech leads, design</dd></div>
@@ -125,46 +125,78 @@
   <section>
     <div class="wrap">
       <div class="text">
-        <h2>Design: from a blank slate to data-backed rules</h2>
-        <p>Research pointed to two moments where users stalled. The <strong>cold start</strong>: an empty builder and hundreds of properties, with no idea which three to five rules would move the needle. And the <strong>knowledge plateau</strong>: existing users stuck to obvious rules and never found high-converting signals outside their assumptions. Each sprint went from a design brief to an interaction flow to tested screens.</p>
-        <h3>1. Discover rules with AI</h3>
-        <p>Rather than make users hunt for properties, we flipped the script. Business intelligence ranks candidate rules by conversion rate and reach, and labels each one with a confidence level. Users pick their set of rules and add them to the score in one step.</p>
+        <h2>Design: AI building blocks, not a linear wizard</h2>
+        <p>The old Lead Scoring app worked in a silo: one long form you had to fill in top to bottom. Real users don't work that way. They start from scratch, come back months later, or dig into one rule and want to find better ones. So instead of a single flow, we designed <strong>modular AI components</strong> that can be called from different parts of the experience.</p>
+        <p>Research pointed to two moments where users stalled. The <strong>cold start</strong>: a blank builder and hundreds of properties, with no idea which few rules would move the needle. And the <strong>knowledge plateau</strong>: existing users stuck to obvious rules and never found high-converting signals outside their assumptions. The same two components solve both.</p>
+      </div>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 960 300" role="img" aria-label="Discover AI rules and Rule insights are modular components. Discover is reached from a blank score and from rule insights, so the flow loops instead of running in a line.">
+          <defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="d-head"/></marker></defs>
+          <g class="d-edge">
+            <path d="M240 85H372" marker-end="url(#arw)"/>
+            <path d="M600 85H732" marker-end="url(#arw)"/>
+            <path d="M840 120V202" marker-end="url(#arw)"/>
+            <path d="M740 237H490V128" marker-end="url(#arw)"/>
+          </g>
+          <g><rect x="40" y="50" width="200" height="70" rx="10" class="d-box"/>
+            <text x="140" y="80" class="d-name">Blank score</text><text x="140" y="101" class="d-sub">New empty state</text></g>
+          <g><rect x="380" y="50" width="220" height="70" rx="10" class="d-box d-accent"/>
+            <text x="490" y="80" class="d-name">Discover AI rules</text><text x="490" y="101" class="d-sub">Ranked by impact &amp; confidence</text></g>
+          <g><rect x="740" y="50" width="200" height="70" rx="10" class="d-box"/>
+            <text x="840" y="80" class="d-name">Score builder</text><text x="840" y="101" class="d-sub">Rules in plain language</text></g>
+          <g><rect x="740" y="202" width="200" height="70" rx="10" class="d-box d-accent"/>
+            <text x="840" y="232" class="d-name">Rule insights</text><text x="840" y="253" class="d-sub">Reach, impact, points</text></g>
+          <text x="306" y="74" class="d-label">Start with AI</text>
+          <text x="666" y="74" class="d-label">Add rules</text>
+          <text x="854" y="166" class="d-label d-start">Open on any rule</text>
+          <text x="615" y="227" class="d-label">Find similar rules</text>
+          <text x="40" y="30" class="d-title">Two reusable AI components, many ways in</text>
+        </svg>
+        <figcaption>Discover AI rules and Rule insights are standalone components. Users reach Discover from a blank score <em>or</em> from a rule's insights, so the experience loops instead of forcing one path.</figcaption>
+      </figure>
+
+      <div class="text">
+        <h3>1. A starting point instead of an empty page</h3>
+        <p>New users used to land on a blank page. The new empty state gives three ways in, and the most prominent is <strong>Discover AI rules</strong>.</p>
       </div>
       <figure>
         <img src="assets/img/ls-start.webp" alt="Empty score state with three ways to start: add an event group, add a property group, or discover AI rules" loading="lazy">
-        <figcaption><strong>The jumpstart.</strong> An empty score offers three ways in, including "Discover AI rules," so no one starts from a blank page.</figcaption>
+        <figcaption><strong>The new empty state.</strong> Three ways to start, with AI front and center.</figcaption>
       </figure>
-      <div class="pair">
-        <figure>
-          <img src="assets/img/ls-discover.webp" alt="Discover rules table listing rules with conversion, reach, conversion rate and confidence" loading="lazy">
-          <figcaption><strong>Step 1: select rules.</strong> Rules ranked by what actually converts in your portal, each with a confidence label.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/ls-assign.webp" alt="Assign points step with a score distribution chart and point recommendations" loading="lazy">
-          <figcaption><strong>Step 2: assign points.</strong> A live distribution and point recommendations show the effect before anything is saved.</figcaption>
-        </figure>
-      </div>
+
       <div class="text">
-        <h3>2. Read the model like a sentence</h3>
-        <p>The old builder kept every filter and dropdown in a permanent edit state. That created visual noise and constant scrolling, and it fed the feeling that you need "a PhD in HubSpot." We split the builder into two modes. View mode condenses each rule into a plain-language line, so users can review their whole model at a glance. Clicking a rule opens inline edit mode with the full configuration.</p>
-      </div>
-      <div class="pair">
-        <figure>
-          <img src="assets/img/ls-view.webp" alt="Score builder in view mode with rules shown as readable single lines" loading="lazy">
-          <figcaption><strong>View mode:</strong> the whole model in plain language, easy to audit.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/ls-edit.webp" alt="Score builder with one workflow rule expanded into inline edit controls" loading="lazy">
-          <figcaption><strong>Inline edit:</strong> full controls only where you're working.</figcaption>
-        </figure>
-      </div>
-      <div class="text">
-        <h3>3. Rule insights: see the impact of every rule</h3>
-        <p>To replace hand-testing, every rule gets its own insights: how many contacts it reaches, the average points it adds, and how points are distributed. Plain-language notes flag rules with narrow reach or limited impact, and "similar workflows" suggestions lead users to signals they haven't considered.</p>
+        <h3>2. Discover AI rules: every possible rule, ranked</h3>
+        <p>Rather than make users hunt through hundreds of properties, AI lists every possible rule for the chosen goal and ranks it by impact: how many contacts it reaches, how many converted, and the conversion rate. Each rule carries a <strong>confidence label</strong>, so users know how much data backs the suggestion. They select the rules they want and add them to the score in one step.</p>
       </div>
       <figure>
-        <img src="assets/img/ls-insights.webp" alt="Rule insights panel showing contacts reached, average points per contact and distribution of points" loading="lazy">
-        <figcaption><strong>Rule insights</strong> explain each rule's reach and impact in plain language, and point to similar high-converting workflows.</figcaption>
+        <img src="assets/img/ls-discover.webp" alt="Discover rules table listing rules with conversion, reach, conversion rate and confidence" loading="lazy">
+        <figcaption><strong>Discover AI rules</strong> from a blank score: the rules that actually convert in your portal, with confidence labels.</figcaption>
+      </figure>
+
+      <div class="text">
+        <h3>3. Rule insights: see what each rule is doing</h3>
+        <p>Once rules are in the score, users can open insights on any of them. Insights show how many leads a rule has reached, its impact on the overall score, and the average point distribution. That replaces the old habit of testing a score by hand.</p>
+        <p>The first design put insights in a panel on the right. From there, users could jump to the same Discover component, now filtered to rules similar to the one they were looking at.</p>
+      </div>
+      <div class="pair">
+        <figure>
+          <img src="assets/img/ls-insights-v1.webp" alt="Early design: rule insights and point impact in a panel on the right side of the builder" loading="lazy">
+          <figcaption><strong>First iteration:</strong> insights in a right-hand panel.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/ls-discover-panel.webp" alt="Discover rules opened as a side panel from rule insights, listing similar workflows ranked by conversion and confidence" loading="lazy">
+          <figcaption><strong>Same component, second entry point:</strong> Discover opened from insights to find similar rules.</figcaption>
+        </figure>
+      </div>
+
+      <div class="text">
+        <h3>4. The final design</h3>
+        <p>After rounds of user feedback and working through technical limits, insights moved inline, directly under the rule they describe. Users see reach, average points and the distribution without losing their place, and "View similar workflows" opens Discover AI rules right where they are.</p>
+      </div>
+      <figure>
+        <img src="assets/img/ls-insights.webp" alt="Final rule insights shown inline under a workflow rule: contacts reached, average points per contact and distribution of points" loading="lazy">
+        <figcaption><strong>Final:</strong> inline rule insights with a plain-language summary, reach, average points and distribution, plus a link to similar rules.</figcaption>
       </figure>
     </div>
   </section>
