@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Visualization Library · Charlie Kelley</title>
+  <meta name="description" content="Case study: growing HubSpot's reporting visualization library with consumer grade display options and contextually sensitive visualizations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="cs">
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="name" href="index.html">Charlie Kelley</a>
+    <ul>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#approach">Approach</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li class="hide-sm"><a href="Charlie-Kelley-Resume.pdf">Resume</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <header class="cs-hero">
+    <div class="wrap">
+      <p class="eyebrow">Case study · HubSpot · Data visualization</p>
+      <h1>Data viz library: visualizations that tell effective data stories at scale</h1>
+      <p class="lead text">HubSpot's reporting library could draw almost any chart, but it left users to find the meaning on their own, and every chart looked the same wherever it appeared. I led two initiatives to change that: consumer grade display options that add context to any report, and contextually sensitive visualizations that adapt to where a report is viewed.</p>
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Product designer, reporting visualizations</dd></div>
+        <div><dt>Team</dt><dd>Reporting as a Service (RaaS)</dd></div>
+        <div><dt>Timeframe</dt><dd>2023–2024</dd></div>
+        <div><dt>Principle</dt><dd><span class="tag">Nudge with evidence</span></dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat"><b>100k+</b><span>users adopted display options like forecasts, anomaly detection and trend lines</span></div>
+        <div class="stat"><b>+30%</b><span>two-week retention for users of display options</span></div>
+        <div class="stat"><b>13.1k</b><span>portals turned on linear trend lines in the first weeks after launch</span></div>
+        <div class="stat"><b>91 pts</b><span>NPS gap between users who felt HubSpot helped them make good decisions and those who did not</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap text">
+      <h2>The problem</h2>
+      <p>A recurring theme in customer feedback was how hard it was to pull meaningful insights out of reports and dashboards.</p>
+      <blockquote>"Currently the reporting feels very rigid and doesn't let me get an insight on what's really happening."<cite>HubSpot customer</cite></blockquote>
+      <p>Our 2023 Kano survey (105 responses) showed why this mattered to the business. NPS was strongly correlated with HubSpot's ability to help users make good decisions (r = .71). Users who gave HubSpot low decision-making scores had an NPS of -53, and users who gave high scores had an NPS of 38, a 91-point difference. Detractors also tended to be newer to HubSpot than promoters.</p>
+      <p>The goal was clear: help users understand their data better and get value from reporting faster, without asking them to build new reports or become data experts.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <h2>Part 1: Consumer grade display options</h2>
+        <p>Display options are layers of context that sit on top of an existing report. With my product partners, I set the core requirements. Every option had to add context to a report, work without building a new report, apply across the whole platform, work for internal and external teams, and be controlled from the report itself.</p>
+        <p>We were just as clear about what we would not build: features that need deep technical expertise to set up, disrupt existing workflows, only serve one persona, or require big changes to other reporting surfaces. That is what "consumer grade" meant to us.</p>
+        <h3>What we shipped</h3>
+        <ul class="clean">
+          <li><strong>Trend lines:</strong> linear and logarithmic lines that answer time-based questions like "how have our sales grown this year?" at a glance.</li>
+          <li><strong>Conditional formatting:</strong> diverging and sequential color scales in tables that use pre-attentive processing to point attention to what matters.</li>
+          <li><strong>Anomaly detection:</strong> a model-driven expected range that flags data points that statistically stand out. It was first built for Data Quality, and we brought it to the whole platform.</li>
+          <li><strong>AI Smart Trends:</strong> AI forecasts of future values for single and multi-dimension data, shown in the same frame as the observed data.</li>
+        </ul>
+      </div>
+      <figure>
+        <img src="assets/img/dv-anomaly.webp" alt="Line chart of deal count with a shaded expected range and two anomalous points highlighted with ringed markers" loading="lazy">
+        <figcaption>Anomaly detection: a shaded expected range with anomalous points called out.</figcaption>
+      </figure>
+      <div class="pair">
+        <figure>
+          <img src="assets/img/dv-cf-tables.webp" alt="Two tables side by side, one with a diverging green-to-red color scale and one with a sequential single-color scale" loading="lazy">
+          <figcaption>Conditional formatting in tables: diverging (good to bad) and sequential (small to big) palettes.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/dv-smart-trends.webp" alt="Multi-dimension line chart with dashed forecast lines and shaded forecast ranges for three stages" loading="lazy">
+          <figcaption>AI Smart Trends: dashed expected values and shaded ranges for multi-dimension forecasts.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <h3>Design guides that scale</h3>
+        <p>New display options kept arriving from different teams, so I wrote design guides that any team could follow. They are built on the reporting visualizations mission, "visualizations that tell effective data stories at scale," and four principles: develop hierarchy between primary and secondary data, highlight what is most important, tell a story or offer an opinion, and scale to solve specific problems for broad use cases.</p>
+        <p>Each guide pairs the background and design considerations with a single design decision, so teams do not have to reinvent the visual language:</p>
+        <ul class="clean">
+          <li><strong>Expected ranges</strong> are an area in the chart's own color at 60% transparency, so they stay secondary to observed data and work with custom palettes.</li>
+          <li><strong>Expected values</strong> are a dashed line in the same color as the observed values.</li>
+          <li><strong>Anomalies</strong> keep the shape and size of a normal point but add rings in the warning color, so they read as the primary data point.</li>
+          <li><strong>Continuous color palettes</strong> reuse HubSpot's existing warning and reporting colors, at 50% opacity in tables to keep text and links readable.</li>
+        </ul>
+      </div>
+      <figure class="narrow">
+        <img src="assets/img/dv-anomaly-spec.webp" alt="Design guide showing an observed data point next to a ringed anomaly point, and the anomaly in a chart" loading="lazy">
+        <figcaption>One design decision per element: how an observed point becomes an anomaly.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="text">
+        <h2>Part 2: Contextually sensitive visualizations</h2>
+        <p>As reporting spread across HubSpot, the same chart showed up in the report viewer, on dashboards, on homepages, in workspaces and on CRM cards. Our library was powerful, but it was one-size-fits-all. That made it harder to deliver easy, fast and unified experiences in each of those places.</p>
+        <p>I mapped each context by the job to be done. On one end, the report viewer is about analysis and exploration, with high data and chart detail. On the other, a CRM card is about getting a task done, with just enough data to explain what is happening.</p>
+      </div>
+      <figure>
+        <img src="assets/img/dv-density.webp" alt="Spectrum from high data density in the report viewer and dashboards to low data density in workspaces and CRM cards" loading="lazy">
+        <figcaption>Different contexts need different levels of data density, driven by the jobs to be done.</figcaption>
+      </figure>
+      <div class="text">
+        <h3>Three ways to solve for context</h3>
+        <p>The key idea was that one report configuration could serve every context. Instead of each team building its own charts, consuming teams could use the same report three ways:</p>
+        <ol class="clean">
+          <li><strong>Multiple modes:</strong> the same report visualized as a lo-fi sparkline, gauge, benchmark or natural-language summary, or as a full chart.</li>
+          <li><strong>Configurability:</strong> components that teams and end users can configure to match the data density they need.</li>
+          <li><strong>Scaling to size:</strong> components that respond to the size of their container, scaling both their size and their data density.</li>
+        </ol>
+      </div>
+      <figure>
+        <img src="assets/img/dv-three-ways.webp" alt="Three cards: multiple modes, configurability and scaling to size" loading="lazy">
+        <figcaption>One report configuration, three ways to fit the context.</figcaption>
+      </figure>
+      <div class="pair">
+        <figure>
+          <img src="assets/img/dv-modes.webp" alt="Lo-fi visualization concepts: sparkline, benchmark bar, natural-language sentence, gauge, donut and histogram" loading="lazy">
+          <figcaption>Multiple modes: lo-fi concepts, including a natural-language mode.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/dv-scaling.webp" alt="Datawell concepts that resize and change density based on container size" loading="lazy">
+          <figcaption>Scaling to size: datawells that adapt their size and density.</figcaption>
+        </figure>
+      </div>
+      <div class="text">
+        <h3>Prioritizing with partner teams</h3>
+        <p>I shared the concepts with the teams that build reporting into their own spaces and asked them to help rank priorities. Datawells came out on top. They were second only to tables in usage but had fallen the furthest behind: no scaling, limited configurability and no multiple modes. If we did not support them, teams would keep building their own off-platform "reporting" datawells.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap text">
+      <h2>Impact</h2>
+      <p>Display options were adopted by more than 100k users and improved two-week retention by 30%. Within weeks of launch, 13.1k portals had turned on linear trend lines and 11.8k had turned on logarithmic trend lines. Less engaged users who turned on trend lines had 10–13% higher two-week retention than those who did not. Anomaly detection and AI Smart Trends moved into beta in fall 2024, and the contextual visualization work set datawells as the next priority for the library.</p>
+      <h2 style="margin-top:1.6em">What I learned</h2>
+      <ul class="clean">
+        <li><strong>Say what you will not build.</strong> Defining "consumer grade" kept the roadmap focused on context for everyone, not power features for a few.</li>
+        <li><strong>Design guides scale better than designs.</strong> One clear decision per element let other teams ship display options that look like they belong together.</li>
+        <li><strong>Services over spaces.</strong> Building for one report configuration across many contexts made our library valuable to every team that shows data.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap next">
+      <a href="report-viewer.html">&larr; Single Report Viewer</a>
+      <a href="index.html#work">All work &rarr;</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Charlie Kelley</span>
+    <span><a href="mailto:chkelley86@gmail.com">chkelley86@gmail.com</a> · <a href="https://www.linkedin.com/in/charlie-kelley-4b856020">LinkedIn</a> · <a href="Charlie-Kelley-Resume.pdf">Resume</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
