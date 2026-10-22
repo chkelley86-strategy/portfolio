@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,14 +7,17 @@
   <meta name="description" content="Case study: designing HubSpot's first AI product, AI Insights in Reporting.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,30;1,9..144,400,30&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/v2.css">
 </head>
-<body class="cs">
+<body>
 
-<nav class="nav">
+<nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a class="name" href="index.html">Charlie Kelley</a>
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#1B1B1F"/><path d="M5 18 L10 13 L14 15 L20 7" fill="none" stroke="#FAF7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="7" r="2.6" fill="#E0542F"/></svg>
+      Charlie Kelley
+    </a>
     <ul>
       <li><a href="index.html#work">Work</a></li>
       <li><a href="index.html#approach">Approach</a></li>
@@ -26,138 +29,167 @@
 
 <main>
   <header class="cs-hero">
+    <div class="grid-bg" aria-hidden="true"></div>
     <div class="wrap">
-      <p class="eyebrow">Case study · HubSpot · AI</p>
-      <h1>AI Insights: moving users past data to meaning</h1>
-      <p class="lead text">We were giving users more data, but not helping them make meaningful decisions. I designed HubSpot's first AI product: plain-language insights that summarize a report, highlight what matters, and connect it to action.</p>
+      <p class="crumbs"><a href="index.html#work">Work</a> / 02 / HubSpot</p>
+      <h1>AI Insights: moving users past data to <em class="accent-text">meaning</em></h1>
+      <p class="lead">We were giving users more data, but not helping them make meaningful decisions. I designed HubSpot's first AI product: plain-language insights that summarize a report, highlight what matters, and connect it to action.</p>
       <dl class="meta">
         <div><dt>Role</dt><dd>Product designer</dd></div>
         <div><dt>Team</dt><dd>Reporting as a Service (RaaS)</dd></div>
         <div><dt>Timeframe</dt><dd>2023–2024</dd></div>
-        <div><dt>Principle</dt><dd><span class="tag">Curate, don't dump or dictate</span></dd></div>
+        <div><dt>Focus</dt><dd>Generative AI, prompt design, research</dd></div>
       </dl>
+      <div class="cover reveal">
+        <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Reports · Ad performance · AI Insights</span></div><img src="assets/img/ai-insights.webp" alt="Ad performance report with an Insights panel listing plain-language findings"></div>
+      </div>
+      <div class="wells lg reveal" style="margin-top:32px">
+        <div class="well"><b>185<span class="unit">k</span></b><span>users activated AI Insights</span></div>
+        <div class="well"><b>+25<span class="unit">%</span></b><span>average monthly usage after activation</span></div>
+        <div class="well"><b>1<span class="unit">st</span></b><span>AI product at HubSpot, followed by forecasting and anomaly detection</span></div>
+      </div>
     </div>
   </header>
 
-  <section>
-    <div class="wrap">
-      <div class="stats">
-        <div class="stat"><b>185k</b><span>users activated AI Insights</span></div>
-        <div class="stat"><b>+25%</b><span>average monthly usage after activation</span></div>
-        <div class="stat"><b>1st</b><span>AI product at HubSpot, followed by forecasting and anomaly detection</span></div>
-      </div>
-    </div>
-  </section>
+  <div class="wrap cs-body">
+    <aside class="toc" aria-label="Contents">
+      <span class="label">Contents</span>
+      <ol>
+        <li><a href="#problem">The problem</a></li>
+        <li><a href="#approach">The approach</a></li>
+        <li><a href="#kano">Prioritizing</a></li>
+        <li><a href="#mvp">Scoping the MVP</a></li>
+        <li><a href="#impact">Impact</a></li>
+      </ol>
+    </aside>
 
-  <section>
-    <div class="wrap">
-      <div class="ai-callout text">
-        <p class="eyebrow">Where AI shows up</p>
-        <ul class="clean">
-          <li><strong>Generative summaries:</strong> natural-language insights generated for each report through HubSpot's generative AI wrapper.</li>
-          <li><strong>Prompt design:</strong> shaping what the model highlights so insights read like a good analyst, not a data dump.</li>
-          <li><strong>A foundation for more:</strong> forecasting, anomaly detection and generated report descriptions followed.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <article>
+      <section class="chapter" id="problem">
+        <span class="chapter-num">00 · The problem</span>
+        <h2>More data didn't mean better decisions.</h2>
+        <div class="prose">
+          <p>Reporting kept adding data and features, but users still struggled to work out what was meaningful and what to do about it.</p>
+        </div>
+        <blockquote class="pull reveal">
+          <p>"Is this data or information? What is meaningful, how do I make something meaningful…"</p>
+          <cite>Marketing director, HubSpot customer</cite>
+        </blockquote>
+        <h3>Two kinds of users, one gap</h3>
+        <div class="needs reveal">
+          <div class="card">
+            <span class="label">Consumers</span>
+            <p style="margin-top:8px">Know the business but not their data. They need to know what's meaningful so they can act on it.</p>
+            <blockquote>"It's hard to pull meaningful information from the dashboard."</blockquote>
+          </div>
+          <div class="card">
+            <span class="label">Producers</span>
+            <p style="margin-top:8px">Spend more time with data and need to explain why it matters to decision makers.</p>
+            <blockquote>"I have to send along video or a text box and I'm like why is this so much work?"</blockquote>
+          </div>
+        </div>
+      </section>
 
+      <section class="chapter" id="approach">
+        <span class="chapter-num">01 · The approach</span>
+        <h2>Curate, don't dump: do what a good analyst would.</h2>
+        <div class="cards three reveal">
+          <div class="card">
+            <div class="glyph"><svg viewBox="0 0 120 56" aria-hidden="true"><g fill="#D6CDBE"><rect x="4" y="8" width="112" height="6" rx="3"/><rect x="4" y="20" width="96" height="6" rx="3"/><rect x="4" y="32" width="104" height="6" rx="3"/></g><rect x="4" y="44" width="60" height="8" rx="4" fill="#E0542F"/></svg></div>
+            <span class="label">Summarize</span><h4>Condense complex information</h4><p>Turn a noisy report into a few plain-language sentences.</p>
+          </div>
+          <div class="card">
+            <div class="glyph"><svg viewBox="0 0 120 56" aria-hidden="true"><g fill="#D6CDBE"><rect x="6" y="30" width="14" height="22" rx="2"/><rect x="26" y="22" width="14" height="30" rx="2"/><rect x="66" y="26" width="14" height="26" rx="2"/><rect x="86" y="34" width="14" height="18" rx="2"/></g><rect x="46" y="6" width="14" height="46" rx="2" fill="#E0542F"/></svg></div>
+            <span class="label">Highlight</span><h4>Point to what's salient</h4><p>Call out the one change that matters among many.</p>
+          </div>
+          <div class="card">
+            <div class="glyph"><svg viewBox="0 0 120 56" aria-hidden="true"><rect x="4" y="10" width="40" height="36" rx="6" fill="#fff" stroke="#D6CDBE"/><rect x="76" y="10" width="40" height="36" rx="6" fill="#fff" stroke="#D6CDBE"/><path d="M44 28 H76" stroke="#E0542F" stroke-width="2.5" stroke-dasharray="4 3"/><circle cx="60" cy="28" r="5" fill="#E0542F"/></svg></div>
+            <span class="label">Connect</span><h4>Link information across reports</h4><p>Show how one finding relates to the rest of the business.</p>
+          </div>
+        </div>
+        <div class="prose">
+          <p>I moved from customer touchpoints to lo-fi concepts, tested with a small set of customers, then validated at scale. Early users wanted insights that were natural-language, automatic, easy to configure, connected to the rest of reporting, and paired with visuals.</p>
+        </div>
+      </section>
 
-  <section>
-    <div class="wrap text">
-      <h2>The problem</h2>
-      <p>Reporting kept adding data and features, but users still struggled to work out what was meaningful and what to do about it.</p>
-      <blockquote>"Is this data or information? What is meaningful, how do I make something meaningful…"<cite>Marketing director, HubSpot customer</cite></blockquote>
-      <h3>Two kinds of users, one gap</h3>
-      <table class="map">
-        <thead><tr><th>Consumers</th><th>Producers</th></tr></thead>
-        <tbody>
-          <tr>
-            <td>Know the business but not their data. Need to know what's meaningful so they can act on it.<br><br><em>"It's hard to pull meaningful information from the dashboard."</em></td>
-            <td>Spend more time with data and need to explain why it matters to decision makers.<br><br><em>"I have to send along video or a text box and I'm like why is this so much work?"</em></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+      <section class="chapter" id="kano">
+        <span class="chapter-num">02 · Prioritizing with a Kano survey</span>
+        <h2>14 features, 105 users, and one surprising answer.</h2>
+        <div class="prose">
+          <p>We had many possible directions, so I ran a Kano survey testing 14 features with 105 users to learn what they expected, what would delight them, and what they didn't want.</p>
+        </div>
+        <figure class="fig reveal">
+          <div class="plate" style="display:flex;justify-content:center"><img src="assets/img/kano.webp" alt="Kano survey scatter plot comparing what respondents want versus expect for 14 features" loading="lazy" style="max-width:min(560px,100%)"></div>
+          <figcaption><span class="label">Fig. 01</span><span>Kano results: features plotted by how much users want them against how much they expect them.</span></figcaption>
+        </figure>
+        <div class="cards three reveal">
+          <div class="card"><span class="label">Prioritize</span><h4>Advanced breakdowns</h4><p>Users expect more advanced breakdowns and groupings of their reports.</p></div>
+          <div class="card"><span class="label">Aspire</span><h4>Beyond the chart</h4><p>Users want information that goes beyond their own reading of a chart.</p></div>
+          <div class="card" style="border-color:var(--accent)"><span class="label" style="color:var(--accent-ink)">Rethink</span><h4>Insight, not instructions</h4><p>None of the features that suggested actions or resources were desirable.</p></div>
+        </div>
+        <p class="note"><span class="label">Design decision</span>That last finding shaped the product. AI Insights curates and explains, and it leaves the decision to the user.</p>
+      </section>
 
-  <section>
-    <div class="wrap">
-      <div class="text">
-        <h2>The approach: curate, don't dump</h2>
-        <p>The goal was to take noisy data and do three things a good analyst would: <strong>summarize</strong> complex information, <strong>highlight</strong> what's salient, and <strong>connect</strong> information across reports.</p>
-        <p>I moved from customer touchpoints to lo-fi concepts, tested with a small set of customers, then validated at scale. Early users wanted insights that were natural-language, automatic, easy to configure, connected to the rest of reporting, and paired with visuals.</p>
-        <h3>Prioritizing with a Kano survey</h3>
-        <p>We had many possible directions, so I ran a Kano survey testing 14 features with 105 users to learn what they expected, what would delight them, and what they didn't want.</p>
-      </div>
-      <figure class="narrow">
-        <img src="assets/img/kano.webp" alt="Kano survey scatter plot comparing what respondents want versus expect for 14 features" loading="lazy">
-        <figcaption>Kano results: features plotted by how much users want them against how much they expect them.</figcaption>
-      </figure>
-      <div class="text">
-        <ul class="clean">
-          <li><strong>Prioritize:</strong> users expect more advanced breakdowns and groupings of their reports.</li>
-          <li><strong>Aspire:</strong> users want information that goes beyond their own reading of a chart.</li>
-          <li><strong>Rethink:</strong> none of the tested features that suggested actions or resources were desirable. Users wanted insight, not instructions.</li>
-        </ul>
-        <p>That last finding shaped the product. AI Insights curates and explains, and it leaves the decision to the user.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="text">
-        <h2>Scoping the MVP</h2>
-        <p>To ship fast with existing models, we focused on one report at a time and generated summary text through HubSpot's generative AI wrapper. We left out a chat interface, customization, generated visuals and modularity.</p>
+      <section class="chapter" id="mvp">
+        <span class="chapter-num">03 · Scoping the MVP</span>
+        <h2>Ship the slice with existing models, then iterate.</h2>
+        <div class="scope reveal">
+          <div class="yes"><span class="label">In the MVP</span>
+            <ul><li>One report at a time</li><li>Summary text from HubSpot's generative AI wrapper</li><li>Insights beside the chart they describe</li></ul>
+          </div>
+          <div class="no"><span class="label">Left out</span>
+            <ul><li>Chat interface</li><li>Customization</li><li>Generated visuals</li><li>Modularity</li></ul>
+          </div>
+        </div>
         <h3>Iterating on the experience</h3>
-        <p>The first design showed insights in a modal. It caused technical issues, and in testing users preferred seeing all insights at once, next to the chart they described.</p>
-      </div>
-      <div class="pair">
-        <figure>
-          <img src="assets/img/ai-iteration.webp" alt="Early design: report insights shown one at a time in a modal" loading="lazy">
-          <figcaption><strong>Before:</strong> insights one at a time in a modal.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/ai-panel.webp" alt="Final design: a list of AI insights shown above the chart" loading="lazy">
-          <figcaption><strong>After:</strong> every insight at once, beside the data.</figcaption>
-        </figure>
-      </div>
-      <blockquote class="text">"This is exactly what I would be looking for… just, really quick, interesting insights that I can share out."<cite>Usability test participant</cite></blockquote>
-      <figure>
-        <img src="assets/img/ai-insights.webp" alt="Ad performance report with an Insights panel listing plain-language findings" loading="lazy">
-        <figcaption>The released experience: plain-language insights in a side panel on any report.</figcaption>
-      </figure>
-    </div>
-  </section>
+        <div class="prose">
+          <p>The first design showed insights in a modal. It caused technical issues, and in testing users preferred seeing all insights at once, next to the chart they described.</p>
+        </div>
+        <div class="compare reveal">
+          <figure class="fig" style="margin:0"><span class="tag">Before</span><div class="plate"><img src="assets/img/ai-iteration.webp" alt="Early design: report insights shown one at a time in a modal" loading="lazy"></div><figcaption>Insights one at a time in a modal.</figcaption></figure>
+          <figure class="fig after" style="margin:0"><span class="tag">After</span><div class="plate"><img src="assets/img/ai-panel.webp" alt="Final design: a list of AI insights shown above the chart" loading="lazy"></div><figcaption>Every insight at once, beside the data.</figcaption></figure>
+        </div>
+        <blockquote class="pull reveal">
+          <p>"This is exactly what I would be looking for… just, really quick, interesting insights that I can share out."</p>
+          <cite>Usability test participant</cite>
+        </blockquote>
+      </section>
 
-  <section>
-    <div class="wrap text">
-      <h2>Impact</h2>
-      <p>AI Insights was activated by 185k users, and average monthly usage rose 25% after activation. As HubSpot's first AI product, it paved the way for fast follows: forecasting, anomaly detection and generated report descriptions. Those display options were adopted by more than 100k users and improved two-week retention by 30%.</p>
-      <h2 style="margin-top:1.6em">What I learned</h2>
-      <ul class="clean">
-        <li><strong>Prompt engineering is design work.</strong> The quality of an insight depends as much on the prompt and its framing as on the UI around it.</li>
-        <li><strong>Evidence tells you where to stop.</strong> The Kano survey kept us from building recommendations users didn't want.</li>
-        <li><strong>Ship the slice, then connect it.</strong> Next steps were linking insights to drill-throughs and an AI assistant.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap next">
-      <a href="lead-scoring.html">&larr; Lead Scoring</a>
-      <a href="report-viewer.html">Next: Single Report Viewer &rarr;</a>
-    </div>
-  </section>
+      <section class="chapter" id="impact">
+        <span class="chapter-num">04 · Impact</span>
+        <h2>HubSpot's first AI product, and the path for the ones after it.</h2>
+        <div class="prose">
+          <p>AI Insights was activated by 185k users, and average monthly usage rose 25% after activation. It paved the way for fast follows: forecasting, anomaly detection and generated report descriptions. Those display options were adopted by more than 100k users and improved two-week retention by 30%.</p>
+        </div>
+        <h3>What I learned</h3>
+        <div class="lessons reveal">
+          <div><b>Prompt engineering is design work.</b><p>The quality of an insight depends as much on the prompt and its framing as on the UI around it.</p></div>
+          <div><b>Evidence tells you where to stop.</b><p>The Kano survey kept us from building recommendations users didn't want.</p></div>
+          <div><b>Ship the slice, then connect it.</b><p>Next steps were linking insights to drill-throughs and an AI assistant.</p></div>
+        </div>
+        <a class="next-proj reveal" href="report-viewer.html">
+          <div><span class="label">Next case study · 03</span><h3>Single Report Viewer</h3></div>
+          <span class="arr">→</span>
+        </a>
+      </section>
+    </article>
+  </div>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>&copy; 2026 Charlie Kelley</span>
-    <span><a href="mailto:chkelley86@gmail.com">chkelley86@gmail.com</a> · <a href="https://www.linkedin.com/in/charlie-kelley-4b856020">LinkedIn</a> · <a href="Charlie-Kelley-Resume.pdf">Resume</a></span>
+    <div>
+      <span class="label">Let's talk</span>
+      <h2 style="margin-top:12px">Have a messy data problem? <a href="mailto:chkelley86@gmail.com" style="color:var(--accent-ink)">Say hello.</a></h2>
+    </div>
+    <div class="links">
+      <a href="mailto:chkelley86@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/charlie-kelley-4b856020">LinkedIn</a>
+      <a href="Charlie-Kelley-Resume.pdf">Resume</a>
+    </div>
+    <small>© 2026 Charlie Kelley · Ann Arbor, Michigan</small>
   </div>
 </footer>
 
+<script src="assets/v2.js"></script>
 </body>
 </html>

@@ -1,20 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Data Visualization Library · Charlie Kelley</title>
-  <meta name="description" content="Case study: growing HubSpot's reporting visualization library with consumer grade display options and contextually sensitive visualizations.">
+  <title>Data Viz Library · Charlie Kelley</title>
+  <meta name="description" content="Case study: growing HubSpot's reporting visualization library with consumer grade display options, contextually sensitive visualizations and a library redesign.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,30;1,9..144,400,30&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/v2.css">
 </head>
-<body class="cs">
+<body>
 
-<nav class="nav">
+<nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a class="name" href="index.html">Charlie Kelley</a>
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#1B1B1F"/><path d="M5 18 L10 13 L14 15 L20 7" fill="none" stroke="#FAF7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="7" r="2.6" fill="#E0542F"/></svg>
+      Charlie Kelley
+    </a>
     <ul>
       <li><a href="index.html#work">Work</a></li>
       <li><a href="index.html#approach">Approach</a></li>
@@ -26,198 +29,316 @@
 
 <main>
   <header class="cs-hero">
+    <div class="grid-bg" aria-hidden="true"></div>
     <div class="wrap">
-      <p class="eyebrow">Case study · HubSpot · Data visualization</p>
-      <h1>Data viz library: visualizations that tell effective data stories at scale</h1>
-      <p class="lead text">HubSpot's reporting library could draw almost any chart, but it left users to find the meaning on their own, and every chart looked the same wherever it appeared. I led three initiatives to change that: consumer grade display options that add context to any report, contextually sensitive visualizations that adapt to where a report is viewed, and a redesign of the library itself.</p>
+      <p class="crumbs"><a href="index.html#work">Work</a> / 04 / HubSpot</p>
+      <h1>Data Viz Library: visualizations that tell <em class="accent-text">effective data stories</em> at scale</h1>
+      <p class="lead">HubSpot's reporting library could draw almost any chart, but it left users to find the meaning on their own, and every chart looked the same wherever it appeared. I led three initiatives to change that: consumer grade display options, contextually sensitive visualizations and a redesign of the library itself.</p>
       <dl class="meta">
         <div><dt>Role</dt><dd>Product designer, reporting visualizations</dd></div>
         <div><dt>Team</dt><dd>Reporting as a Service (RaaS)</dd></div>
-        <div><dt>Timeframe</dt><dd>2023–2024</dd></div>
-        <div><dt>Principle</dt><dd><span class="tag">Nudge with evidence</span></dd></div>
+        <div><dt>Timeframe</dt><dd>2023–2025</dd></div>
+        <div><dt>Partners</dt><dd>PM, engineering, Trellis design system, agency</dd></div>
       </dl>
+      <div class="cover reveal">
+        <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Analytics dashboard · redesigned visualization library</span></div><img src="assets/img/dv-redesign-dashboard.webp" alt="Redesigned analytics dashboard with KPI datawells, a donut chart and a bar chart in the new visual style"></div>
+      </div>
+      <div class="wells lg reveal" style="margin-top:32px">
+        <div class="well"><b>100<span class="unit">k+</span></b><span>users adopted display options like forecasts, anomaly detection and trend lines</span></div>
+        <div class="well"><b>+30<span class="unit">%</span></b><span>two-week retention for users of display options</span></div>
+        <div class="well"><b>13.1<span class="unit">k</span></b><span>portals turned on linear trend lines in the first weeks</span></div>
+        <div class="well"><b>91<span class="unit">pts</span></b><span>NPS gap between users who felt HubSpot helped them decide well and those who did not</span></div>
+      </div>
     </div>
   </header>
 
-  <section>
-    <div class="wrap">
-      <div class="stats">
-        <div class="stat"><b>100k+</b><span>users adopted display options like forecasts, anomaly detection and trend lines</span></div>
-        <div class="stat"><b>+30%</b><span>two-week retention for users of display options</span></div>
-        <div class="stat"><b>13.1k</b><span>portals turned on linear trend lines in the first weeks after launch</span></div>
-        <div class="stat"><b>91 pts</b><span>NPS gap between users who felt HubSpot helped them make good decisions and those who did not</span></div>
-      </div>
-    </div>
-  </section>
+  <div class="wrap cs-body">
+    <aside class="toc" aria-label="Contents">
+      <span class="label">Contents</span>
+      <ol>
+        <li><a href="#problem">The problem</a></li>
+        <li><a href="#display-options">Display options</a></li>
+        <li><a href="#design-guides">Design guides</a></li>
+        <li><a href="#context">Context</a></li>
+        <li><a href="#redesign">Library redesign</a></li>
+        <li><a href="#impact">Impact</a></li>
+      </ol>
+    </aside>
 
-  <section>
-    <div class="wrap text">
-      <h2>The problem</h2>
-      <p>A recurring theme in customer feedback was how hard it was to pull meaningful insights out of reports and dashboards.</p>
-      <blockquote>"Currently the reporting feels very rigid and doesn't let me get an insight on what's really happening."<cite>HubSpot customer</cite></blockquote>
-      <p>Our 2023 Kano survey (105 responses) showed why this mattered to the business. NPS was strongly correlated with HubSpot's ability to help users make good decisions (r = .71). Users who gave HubSpot low decision-making scores had an NPS of -53, and users who gave high scores had an NPS of 38, a 91-point difference. Detractors also tended to be newer to HubSpot than promoters.</p>
-      <p>The goal was clear: help users understand their data better and get value from reporting faster, without asking them to build new reports or become data experts.</p>
-    </div>
-  </section>
+    <article>
+      <!-- 00 Problem -->
+      <section class="chapter" id="problem">
+        <span class="chapter-num">00 · The problem</span>
+        <h2>Users had more data than ever, and less idea what it meant.</h2>
+        <div class="prose">
+          <p>A recurring theme in customer feedback was how hard it was to pull meaningful insights out of reports and dashboards. The library rendered charts faithfully, but it offered no opinion about what mattered.</p>
+        </div>
+        <blockquote class="pull reveal">
+          <p>"Currently the reporting feels very rigid and doesn't let me get an insight on what's really happening."</p>
+          <cite>HubSpot customer</cite>
+        </blockquote>
+        <div class="prose">
+          <p>Our 2023 Kano survey (105 responses) showed why this mattered to the business. NPS was strongly correlated with HubSpot's ability to help users make good decisions (r = .71).</p>
+        </div>
+        <figure class="fig reveal">
+          <div class="plate">
+            <svg viewBox="0 0 640 150" role="img" aria-label="NPS of -53 for users with low decision-making scores versus 38 for users with high scores, a 91-point gap">
+              <g font-family="JetBrains Mono, monospace" font-size="11" fill="#6B665E" letter-spacing=".5">
+                <text x="20" y="138">-100</text><text x="312" y="138">0</text><text x="596" y="138">+100</text>
+              </g>
+              <line x1="30" y1="80" x2="610" y2="80" stroke="#D6CDBE" stroke-width="2"/>
+              <line x1="320" y1="64" x2="320" y2="96" stroke="#D6CDBE" stroke-width="1"/>
+              <line x1="166" y1="80" x2="430" y2="80" stroke="#E0542F" stroke-width="4"/>
+              <circle cx="166" cy="80" r="10" fill="#fff" stroke="#1B1B1F" stroke-width="2.5"/>
+              <circle cx="430" cy="80" r="10" fill="#E0542F"/>
+              <g font-family="Inter, sans-serif">
+                <text x="166" y="44" text-anchor="middle" font-size="26" font-weight="600" fill="#1B1B1F">-53</text>
+                <text x="166" y="118" text-anchor="middle" font-size="12" fill="#6B665E">Low decision-making score</text>
+                <text x="430" y="44" text-anchor="middle" font-size="26" font-weight="600" fill="#E0542F">38</text>
+                <text x="430" y="118" text-anchor="middle" font-size="12" fill="#6B665E">High decision-making score</text>
+              </g>
+              <text x="298" y="66" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#B33A19" letter-spacing=".5">91-POINT GAP</text>
+            </svg>
+          </div>
+          <figcaption><span class="label">Fig. 01</span><span>NPS by how well users felt HubSpot helped them make decisions (2023 Kano survey, n = 105). Detractors also tended to be newer to HubSpot than promoters.</span></figcaption>
+        </figure>
+        <div class="prose">
+          <p>The goal was clear: help users understand their data and get value from reporting faster, without asking them to build new reports or become data experts.</p>
+        </div>
+      </section>
 
-  <section>
-    <div class="wrap">
-      <div class="text">
-        <h2>Part 1: Consumer grade display options</h2>
-        <p>Display options are layers of context that sit on top of an existing report. With my product partners, I set the core requirements. Every option had to add context to a report, work without building a new report, apply across the whole platform, work for internal and external teams, and be controlled from the report itself.</p>
-        <p>We were just as clear about what we would not build: features that need deep technical expertise to set up, disrupt existing workflows, only serve one persona, or require big changes to other reporting surfaces. That is what "consumer grade" meant to us.</p>
+      <!-- 01 Display options -->
+      <section class="chapter" id="display-options">
+        <span class="chapter-num">01 · Consumer grade display options</span>
+        <h2>Layers of context that sit on top of any report.</h2>
+        <div class="prose">
+          <p>Display options add meaning to a chart without changing the report underneath. With my product partners, I set the requirements up front and was just as explicit about what we would not build. That is what "consumer grade" meant to us.</p>
+        </div>
+        <div class="scope reveal">
+          <div class="yes"><span class="label">We will</span>
+            <ul><li>Add context to an existing report</li><li>Work without building a new report</li><li>Apply across the whole platform</li><li>Work for internal and external teams</li><li>Be controlled from the report itself</li></ul>
+          </div>
+          <div class="no"><span class="label">We won't</span>
+            <ul><li>Require deep technical expertise</li><li>Disrupt existing workflows</li><li>Serve only one persona</li><li>Force big changes to other reporting surfaces</li></ul>
+          </div>
+        </div>
+
         <h3>What we shipped</h3>
-        <ul class="clean">
-          <li><strong>Trend lines:</strong> linear and logarithmic lines that answer time-based questions like "how have our sales grown this year?" at a glance.</li>
-          <li><strong>Conditional formatting:</strong> diverging and sequential color scales in tables that use pre-attentive processing to point attention to what matters.</li>
-          <li><strong>Anomaly detection:</strong> a model-driven expected range that flags data points that statistically stand out. It was first built for Data Quality, and we brought it to the whole platform.</li>
-          <li><strong>AI Smart Trends:</strong> AI forecasts of future values for single and multi-dimension data, shown in the same frame as the observed data.</li>
-        </ul>
-      </div>
-      <figure>
-        <img src="assets/img/dv-anomaly.webp" alt="Line chart of deal count with a shaded expected range and two anomalous points highlighted with ringed markers" loading="lazy">
-        <figcaption>Anomaly detection: a shaded expected range with anomalous points called out.</figcaption>
-      </figure>
-      <div class="pair">
-        <figure>
-          <img src="assets/img/dv-cf-tables.webp" alt="Two tables side by side, one with a diverging green-to-red color scale and one with a sequential single-color scale" loading="lazy">
-          <figcaption>Conditional formatting in tables: diverging (good to bad) and sequential (small to big) palettes.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/dv-smart-trends.webp" alt="Multi-dimension line chart with dashed forecast lines and shaded forecast ranges for three stages" loading="lazy">
-          <figcaption>AI Smart Trends: dashed expected values and shaded ranges for multi-dimension forecasts.</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
+        <div class="cards reveal">
+          <div class="card">
+            <div class="glyph"><svg viewBox="0 0 120 56" aria-hidden="true"><g fill="#D6CDBE"><circle cx="10" cy="44" r="3"/><circle cx="26" cy="34" r="3"/><circle cx="42" cy="40" r="3"/><circle cx="58" cy="26" r="3"/><circle cx="74" cy="30" r="3"/><circle cx="90" cy="16" r="3"/><circle cx="106" cy="18" r="3"/></g><path d="M6 46 L112 10" stroke="#E0542F" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+            <span class="label">Shipped</span><h4>Trend lines</h4>
+            <p>Linear and logarithmic lines that answer time-based questions like "how have our sales grown this year?" at a glance.</p>
+          </div>
+          <div class="card">
+            <div class="glyph"><svg viewBox="0 0 120 56" aria-hidden="true"><g><rect x="4" y="4" width="112" height="10" rx="2" fill="#D5ECE8"/><rect x="4" y="17" width="112" height="10" rx="2" fill="#F9DCD1"/><rect x="4" y="30" width="112" height="10" rx="2" fill="#FBEBC8"/><rect x="4" y="43" width="112" height="10" rx="2" fill="#F4B5A3"/></g><g fill="#3A3936"><rect x="10" y="8" width="36" height="2" rx="1"/><rect x="10" y="21" width="28" height="2" rx="1"/><rect x="10" y="34" width="40" height="2" rx="1"/><rect x="10" y="47" width="32" height="2" rx="1"/></g></svg></div>
+            <span class="label">Shipped</span><h4>Conditional formatting</h4>
+            <p>Diverging and sequential color scales in tables that use pre-attentive processing to point attention to what matters.</p>
+          </div>
+          <div class="card">
+            <div class="glyph"><svg viewBox="0 0 120 56" aria-hidden="true"><path d="M4 30 L116 26 L116 42 L4 44 Z" fill="#F9DCD1"/><path d="M4 38 L26 34 L44 8 L62 36 L82 50 L100 34 L116 34" fill="none" stroke="#1B1B1F" stroke-width="2" stroke-linejoin="round"/><circle cx="44" cy="8" r="5" fill="#fff" stroke="#E0542F" stroke-width="2.5"/><circle cx="82" cy="50" r="5" fill="#fff" stroke="#E0542F" stroke-width="2.5"/></svg></div>
+            <span class="label">Beta, fall 2024</span><h4>Anomaly detection</h4>
+            <p>A model-driven expected range that flags points that statistically stand out. It was first built for Data Quality, and we brought it to the whole platform.</p>
+          </div>
+          <div class="card">
+            <div class="glyph"><svg viewBox="0 0 120 56" aria-hidden="true"><path d="M60 30 L116 12 L116 40 Z" fill="#F9DCD1"/><path d="M4 44 L22 30 L40 38 L60 30" fill="none" stroke="#1B1B1F" stroke-width="2" stroke-linejoin="round"/><path d="M60 30 L116 26" fill="none" stroke="#E0542F" stroke-width="2" stroke-dasharray="4 3"/><line x1="60" y1="4" x2="60" y2="52" stroke="#D6CDBE" stroke-dasharray="2 3"/></svg></div>
+            <span class="label">Beta, fall 2024</span><h4>AI Smart Trends</h4>
+            <p>AI forecasts of future values for single and multi-dimension data, shown in the same frame as the observed data.</p>
+          </div>
+        </div>
 
-  <section>
-    <div class="wrap">
-      <div class="text">
-        <h3>Design guides that scale</h3>
-        <p>New display options kept arriving from different teams, so I wrote design guides that any team could follow. They are built on the reporting visualizations mission, "visualizations that tell effective data stories at scale," and four principles: develop hierarchy between primary and secondary data, highlight what is most important, tell a story or offer an opinion, and scale to solve specific problems for broad use cases.</p>
-        <p>Each guide pairs the background and design considerations with a single design decision, so teams do not have to reinvent the visual language:</p>
-        <ul class="clean">
-          <li><strong>Expected ranges</strong> are an area in the chart's own color at 60% transparency, so they stay secondary to observed data and work with custom palettes.</li>
-          <li><strong>Expected values</strong> are a dashed line in the same color as the observed values.</li>
-          <li><strong>Anomalies</strong> keep the shape and size of a normal point but add rings in the warning color, so they read as the primary data point.</li>
-          <li><strong>Continuous color palettes</strong> reuse HubSpot's existing warning and reporting colors, at 50% opacity in tables to keep text and links readable.</li>
-        </ul>
-      </div>
-      <figure class="narrow">
-        <img src="assets/img/dv-anomaly-spec.webp" alt="Design guide showing an observed data point next to a ringed anomaly point, and the anomaly in a chart" loading="lazy">
-        <figcaption>One design decision per element: how an observed point becomes an anomaly.</figcaption>
-      </figure>
-    </div>
-  </section>
+        <figure class="fig wide reveal">
+          <div class="plate">
+            <div class="annot">
+              <img src="assets/img/dv-anomaly.webp" alt="Line chart of deal count with a shaded expected range and two anomalous points highlighted with ringed markers" loading="lazy">
+              <span class="pin offset-r" style="left:22.9%;top:23.4%">1</span>
+              <span class="pin offset-r" style="left:58.6%;top:72.8%">2</span>
+              <span class="pin" style="left:50%;top:51%">3</span>
+            </div>
+            <ol class="key">
+              <li><span class="n">1</span><span><b>Anomaly above range</b>Same shape as a normal point, with rings in the warning color so it reads as the primary data.</span></li>
+              <li><span class="n">2</span><span><b>Anomaly below range</b>Low outliers get the same treatment, because a drop can matter as much as a spike.</span></li>
+              <li><span class="n">3</span><span><b>Expected range</b>The model's likely values in the chart's own color, kept visually secondary.</span></li>
+            </ol>
+          </div>
+          <figcaption><span class="label">Fig. 02</span><span>Anomaly detection on a line chart. Users see what stands out without configuring anything.</span></figcaption>
+        </figure>
 
-  <section>
-    <div class="wrap">
-      <div class="text">
-        <h2>Part 2: Contextually sensitive visualizations</h2>
-        <p>As reporting spread across HubSpot, the same chart showed up in the report viewer, on dashboards, on homepages, in workspaces and on CRM cards. Our library was powerful, but it was one-size-fits-all. That made it harder to deliver easy, fast and unified experiences in each of those places.</p>
-        <p>I mapped each context by the job to be done. On one end, the report viewer is about analysis and exploration, with high data and chart detail. On the other, a CRM card is about getting a task done, with just enough data to explain what is happening.</p>
-      </div>
-      <figure>
-        <img src="assets/img/dv-density.webp" alt="Spectrum from high data density in the report viewer and dashboards to low data density in workspaces and CRM cards" loading="lazy">
-        <figcaption>Different contexts need different levels of data density, driven by the jobs to be done.</figcaption>
-      </figure>
-      <div class="text">
-        <h3>Three ways to solve for context</h3>
-        <p>The key idea was that one report configuration could serve every context. Instead of each team building its own charts, consuming teams could use the same report three ways:</p>
-        <ol class="clean">
-          <li><strong>Multiple modes:</strong> the same report visualized as a lo-fi sparkline, gauge, benchmark or natural-language summary, or as a full chart.</li>
-          <li><strong>Configurability:</strong> components that teams and end users can configure to match the data density they need.</li>
-          <li><strong>Scaling to size:</strong> components that respond to the size of their container, scaling both their size and their data density.</li>
-        </ol>
-      </div>
-      <figure>
-        <img src="assets/img/dv-three-ways.webp" alt="Three cards: multiple modes, configurability and scaling to size" loading="lazy">
-        <figcaption>One report configuration, three ways to fit the context.</figcaption>
-      </figure>
-      <div class="pair">
-        <figure>
-          <img src="assets/img/dv-modes.webp" alt="Lo-fi visualization concepts: sparkline, benchmark bar, natural-language sentence, gauge, donut and histogram" loading="lazy">
-          <figcaption>Multiple modes: lo-fi concepts, including a natural-language mode.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/dv-scaling.webp" alt="Datawell concepts that resize and change density based on container size" loading="lazy">
-          <figcaption>Scaling to size: datawells that adapt their size and density.</figcaption>
-        </figure>
-      </div>
-      <div class="text">
+        <figure class="fig reveal">
+            <div class="plate"><img src="assets/img/dv-cf-tables.webp" alt="Two tables side by side, one with a diverging green-to-red color scale and one with a sequential single-color scale" loading="lazy"></div>
+            <figcaption><span class="label">Fig. 03</span><span>Conditional formatting: diverging (good to bad) and sequential (small to big).</span></figcaption>
+          </figure>
+          <figure class="fig reveal">
+            <div class="plate"><img src="assets/img/dv-smart-trends.webp" alt="Multi-dimension line chart with dashed forecast lines and shaded forecast ranges" loading="lazy"></div>
+            <figcaption><span class="label">Fig. 04</span><span>AI Smart Trends: dashed expected values and shaded ranges for a multi-dimension forecast.</span></figcaption>
+          </figure>
+      </section>
+
+      <!-- 02 Design guides -->
+      <section class="chapter" id="design-guides">
+        <span class="chapter-num">02 · Design guides</span>
+        <h2>One decision per element, so every team's charts look like they belong together.</h2>
+        <div class="prose">
+          <p>New display options kept arriving from different teams. Instead of reviewing each one, I wrote design guides any team could follow, built on the team mission, "visualizations that tell effective data stories at scale," and four principles:</p>
+        </div>
+        <div class="cards four reveal">
+          <div class="card"><span class="label">P1</span><h4>Hierarchy</h4><p>Separate primary data from secondary context.</p></div>
+          <div class="card"><span class="label">P2</span><h4>Highlight</h4><p>Show what is most important first.</p></div>
+          <div class="card"><span class="label">P3</span><h4>Have an opinion</h4><p>Tell a story, don't just plot points.</p></div>
+          <div class="card"><span class="label">P4</span><h4>Scale</h4><p>Solve specific problems for broad use cases.</p></div>
+        </div>
+
+        <h3>The specs, rebuilt</h3>
+        <div class="reveal">
+          <div class="spec">
+            <div class="demo"><svg viewBox="0 0 300 110" aria-hidden="true"><path d="M10 52 L70 46 L130 50 L190 40 L250 34 L290 30 L290 70 L250 74 L190 80 L130 86 L70 82 L10 88 Z" fill="#E0542F" opacity=".4"/><path d="M10 70 L70 64 L130 72 L190 58 L250 54 L290 48" fill="none" stroke="#E0542F" stroke-width="2.5"/></svg></div>
+            <div><span class="label">Spec 01</span><h4>Expected ranges</h4><p>An area in the chart's own color at 60% transparency. It stays secondary to observed data, shows past and future in one chart, and works with custom palettes.</p></div>
+          </div>
+          <div class="spec">
+            <div class="demo"><svg viewBox="0 0 300 110" aria-hidden="true"><path d="M10 84 L70 70 L130 76 L170 58" fill="none" stroke="#2B8C82" stroke-width="2.5"/><path d="M170 58 L230 46 L290 30" fill="none" stroke="#2B8C82" stroke-width="2.5" stroke-dasharray="6 5"/><line x1="170" y1="12" x2="170" y2="100" stroke="#D6CDBE" stroke-dasharray="2 3"/><text x="176" y="20" font-family="JetBrains Mono, monospace" font-size="10" fill="#6B665E">FORECAST</text></svg></div>
+            <div><span class="label">Spec 02</span><h4>Expected values</h4><p>A dashed line in the same color as the observed values. Used for trend lines and forecasts, and it can sit inside an expected range.</p></div>
+          </div>
+          <div class="spec">
+            <div class="demo"><svg viewBox="0 0 300 110" aria-hidden="true"><g transform="translate(70 55)"><circle r="16" fill="none" stroke="#F4A58F" stroke-width="7"/></g><text x="70" y="102" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#6B665E">OBSERVED</text><path d="M110 55 H180" stroke="#1B1B1F" stroke-width="1.5" marker-end="url(#ah)"/><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1B1B1F"/></marker></defs><g transform="translate(225 55)"><circle r="24" fill="#FBE0E3"/><circle r="17" fill="#fff" stroke="#E5405E" stroke-width="7"/><circle r="6" fill="#E5405E"/></g><text x="225" y="102" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#6B665E">ANOMALY</text></svg></div>
+            <div><span class="label">Spec 03</span><h4>Anomalies</h4><p>Same shape and size as an observed point, plus multiple rings in the warning red. Anomalies can be the primary data point, so they are allowed to stand out.</p></div>
+          </div>
+          <div class="spec">
+            <div class="demo">
+              <span class="label">Diverging · good to bad</span>
+              <div class="swatches"><i style="background:#00BDA5"></i><i style="background:#8FD6C4"></i><i style="background:#F5C26B"></i><i style="background:#F59C8B"></i><i style="background:#F2545B"></i></div>
+              <div class="swatch-label"><span>Good</span><span>Neutral</span><span>Bad</span></div>
+              <div style="height:16px"></div>
+              <span class="label">Sequential · small to big</span>
+              <div class="swatches"><i style="background:#FFF1EC"></i><i style="background:#FBD3C4"></i><i style="background:#F6A88E"></i><i style="background:#EE7C58"></i><i style="background:#E0542F"></i></div>
+              <div class="swatch-label"><span>Small</span><span>Big</span></div>
+            </div>
+            <div><span class="label">Spec 04</span><h4>Continuous color palettes</h4><p>Reuse HubSpot's existing warning and reporting colors instead of inventing new ones. In tables they run at 50% opacity so regular text and links keep their contrast.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 Context -->
+      <section class="chapter" id="context">
+        <span class="chapter-num">03 · Contextually sensitive visualizations</span>
+        <h2>The same chart can't serve a report viewer and a CRM card.</h2>
+        <div class="prose">
+          <p>As reporting spread across HubSpot, the same chart showed up in the report viewer, on dashboards, on homepages, in workspaces and on CRM cards. Our library was powerful but one-size-fits-all, which made it harder to deliver easy, fast and unified experiences in each place.</p>
+          <p>I mapped each context by the job to be done, from deep analysis to getting a task done.</p>
+        </div>
+        <div class="spectrum reveal" role="img" aria-label="Spectrum of contexts from high data density in the report viewer to low data density on CRM cards">
+          <div class="bar"></div>
+          <div class="stops"><span>Report viewer</span><span>Dashboards</span><span>Homepages</span><span>Workspaces</span><span>CRM cards</span></div>
+          <div class="ends">
+            <div><b>High data density</b>Focus on analysis · exploration · high data and chart detail</div>
+            <div><b>Low data density</b>Focus on the task · explanation · just enough detail</div>
+          </div>
+        </div>
+
+        <h3>One report configuration, three ways to fit</h3>
+        <div class="cards three reveal">
+          <div class="card">
+            <div class="glyph"><svg viewBox="0 0 160 56" aria-hidden="true"><path d="M4 40 L16 30 L28 36 L40 20" fill="none" stroke="#1B1B1F" stroke-width="2"/><g fill="#1B1B1F"><rect x="58" y="30" width="8" height="20"/><rect x="70" y="18" width="8" height="32"/><rect x="82" y="24" width="8" height="26"/></g><rect x="82" y="24" width="8" height="26" fill="#E0542F"/><text x="108" y="40" font-family="Fraunces, serif" font-size="22" fill="#1B1B1F">3.5k</text></svg></div>
+            <span class="label">Way 01</span><h4>Multiple modes</h4><p>The same report as a sparkline, gauge, benchmark, natural-language sentence or full chart.</p>
+          </div>
+          <div class="card">
+            <div class="glyph"><svg viewBox="0 0 160 56" aria-hidden="true"><rect x="4" y="8" width="70" height="42" rx="6" fill="#fff" stroke="#D6CDBE"/><text x="12" y="24" font-family="JetBrains Mono, monospace" font-size="8" fill="#6B665E">AD CLICKS</text><text x="12" y="42" font-family="Fraunces, serif" font-size="16" fill="#1B1B1F">1,056</text><g transform="translate(92 14)"><rect width="60" height="6" rx="3" fill="#E4DDD1"/><circle cx="40" cy="3" r="5" fill="#E0542F"/><rect y="16" width="60" height="6" rx="3" fill="#E4DDD1"/><circle cx="18" cy="19" r="5" fill="#1B1B1F"/></g></svg></div>
+            <span class="label">Way 02</span><h4>Configurability</h4><p>Components that teams and end users can tune to the data density they need.</p>
+          </div>
+          <div class="card">
+            <div class="glyph"><svg viewBox="0 0 160 56" aria-hidden="true"><rect x="4" y="18" width="34" height="30" rx="4" fill="#fff" stroke="#D6CDBE"/><rect x="10" y="30" width="18" height="6" rx="2" fill="#1B1B1F"/><path d="M46 33 H62" stroke="#E0542F" stroke-width="2" marker-end="url(#ah2)"/><defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#E0542F"/></marker></defs><rect x="70" y="4" width="86" height="48" rx="4" fill="#fff" stroke="#D6CDBE"/><rect x="78" y="14" width="30" height="6" rx="2" fill="#1B1B1F"/><rect x="78" y="26" width="70" height="3" rx="1.5" fill="#D6CDBE"/><rect x="78" y="34" width="60" height="3" rx="1.5" fill="#D6CDBE"/><rect x="78" y="42" width="66" height="3" rx="1.5" fill="#D6CDBE"/></svg></div>
+            <span class="label">Way 03</span><h4>Scaling to size</h4><p>Components that respond to their container, scaling both size and data density.</p>
+          </div>
+        </div>
+
+        <figure class="fig reveal">
+            <div class="plate"><img src="assets/img/dv-modes.webp" alt="Lo-fi visualization concepts: sparkline, benchmark bar, natural-language sentence, gauge, donut and histogram" loading="lazy"></div>
+            <figcaption><span class="label">Fig. 05</span><span>Multiple modes, including a natural-language mode.</span></figcaption>
+          </figure>
+          <figure class="fig reveal">
+            <div class="plate"><img src="assets/img/dv-scaling.webp" alt="Datawell concepts that resize and change density based on container size" loading="lazy"></div>
+            <figcaption><span class="label">Fig. 06</span><span>Datawells that scale their size and their density.</span></figcaption>
+          </figure>
+
         <h3>Prioritizing with partner teams</h3>
-        <p>I shared the concepts with the teams that build reporting into their own spaces and asked them to help rank priorities. Datawells came out on top. They were second only to tables in usage but had fallen the furthest behind: no scaling, limited configurability and no multiple modes. If we did not support them, teams would keep building their own off-platform "reporting" datawells.</p>
-      </div>
-    </div>
-  </section>
+        <div class="prose">
+          <p>I shared the concepts with the teams that build reporting into their own spaces and asked them to help rank priorities. <strong>Datawells came out on top.</strong> They were second only to tables in usage but had fallen the furthest behind: no scaling, limited configurability and no multiple modes. Without support, teams would keep building their own off-platform "reporting" datawells.</p>
+        </div>
+      </section>
 
-  <section>
-    <div class="wrap">
-      <div class="text">
-        <h2>Part 3: Redesigning the visualization library</h2>
-        <p>When Trellis, HubSpot's design system, got a facelift, the data visualization library needed one too. I worked between the Trellis team and an outside agency to define the future of HubSpot's data visualization components, so the new charts would match the new system and leave room for display options and AI.</p>
-        <ul class="clean">
-          <li><strong>New chart anatomy:</strong> every chart is built from the same layers, from the background and frame up through the core marks, add-ons like reference and goal lines, interactive elements and an AI layer on top.</li>
-          <li><strong>New color palettes and chart language:</strong> a refreshed visual style that fits the new Trellis look and keeps primary and secondary data easy to tell apart.</li>
-          <li><strong>Room for AI and display options:</strong> forecasts, anomalies and insights have a defined place in every chart, so they feel like part of one cohesive reporting experience.</li>
-          <li><strong>Design guidelines and resources</strong> so product teams can build with the new library on their own.</li>
-        </ul>
-      </div>
-      <div class="pair">
-        <figure>
-          <img src="assets/img/dv-redesign-layers.webp" alt="Exploded diagram of a chart's six layers: background, frame, core marks, add-ons, interactive elements and AI" loading="lazy">
-          <figcaption>Chart anatomy as layers, from background to AI.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/dv-redesign-anatomy.webp" alt="Donut chart annotated with its parts: title, legend, toolbar, graph frame and labels" loading="lazy">
-          <figcaption>The parts every chart shares: title, legend, toolbar, graph frame and labels.</figcaption>
-        </figure>
-      </div>
-      <div class="pair">
-        <figure>
-          <img src="assets/img/dv-redesign-line.webp" alt="Redesigned line chart with a shaded expected range and a highlighted anomaly point" loading="lazy">
-          <figcaption>Display options built into the new style: an expected range and an anomaly.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/dv-redesign-bubble.webp" alt="Redesigned bubble chart using the new color palette" loading="lazy">
-          <figcaption>The new color palette on a multi-series bubble chart.</figcaption>
-        </figure>
-      </div>
-      <figure>
-        <img src="assets/img/dv-redesign-dashboard.webp" alt="Redesigned analytics dashboard with KPI datawells, a donut chart and a bar chart in the new visual style" loading="lazy">
-        <figcaption>The redesigned components together on an analytics dashboard.</figcaption>
-      </figure>
-    </div>
-  </section>
+      <!-- 04 Redesign -->
+      <section class="chapter" id="redesign">
+        <span class="chapter-num">04 · Library redesign</span>
+        <h2>A new chart anatomy with a place for AI built in.</h2>
+        <div class="prose">
+          <p>When Trellis, HubSpot's design system, got a facelift, the visualization library needed one too. I worked between the Trellis team and an outside agency to define the future of HubSpot's data visualization components: new color palettes, a new chart anatomy, a new language for charts, and a defined place for AI and display options so they feel like one cohesive reporting experience.</p>
+        </div>
+        <div class="fig-row reveal">
+          <figure class="fig">
+            <div class="plate"><img src="assets/img/dv-redesign-layers.webp" alt="Exploded diagram of a chart's six layers: background, frame, core marks, add-ons, interactive elements and AI" loading="lazy"></div>
+            <figcaption><span class="label">Fig. 07</span><span>Every chart is built from the same six layers, from background to AI.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="plate"><img src="assets/img/dv-redesign-anatomy.webp" alt="Donut chart annotated with title, legend, toolbar, graph frame and labels" loading="lazy"></div>
+            <figcaption><span class="label">Fig. 08</span><span>The parts every chart shares: title, legend, toolbar, graph frame and labels.</span></figcaption>
+          </figure>
+        </div>
+        <div class="fig-row reveal">
+          <figure class="fig">
+            <div class="plate flush"><img src="assets/img/dv-redesign-line.webp" alt="Redesigned line chart with a shaded expected range and a highlighted anomaly point" loading="lazy"></div>
+            <figcaption><span class="label">Fig. 09</span><span>Display options in the new style: expected range and anomaly.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <div class="plate flush"><img src="assets/img/dv-redesign-bubble.webp" alt="Redesigned bubble chart using the new color palette" loading="lazy"></div>
+            <figcaption><span class="label">Fig. 10</span><span>The new palette on a multi-series bubble chart.</span></figcaption>
+          </figure>
+        </div>
+      </section>
 
-  <section>
-    <div class="wrap text">
-      <h2>Impact</h2>
-      <p>Display options were adopted by more than 100k users and improved two-week retention by 30%. Within weeks of launch, 13.1k portals had turned on linear trend lines and 11.8k had turned on logarithmic trend lines. Less engaged users who turned on trend lines had 10–13% higher two-week retention than those who did not. Anomaly detection and AI Smart Trends moved into beta in fall 2024, and the contextual visualization work set datawells as the next priority for the library.</p>
-      <h2 style="margin-top:1.6em">What I learned</h2>
-      <ul class="clean">
-        <li><strong>Say what you will not build.</strong> Defining "consumer grade" kept the roadmap focused on context for everyone, not power features for a few.</li>
-        <li><strong>Design guides scale better than designs.</strong> One clear decision per element let other teams ship display options that look like they belong together.</li>
-        <li><strong>Services over spaces.</strong> Building for one report configuration across many contexts made our library valuable to every team that shows data.</li>
-      </ul>
-    </div>
-  </section>
+      <!-- 05 Impact -->
+      <section class="chapter" id="impact">
+        <span class="chapter-num">05 · Impact</span>
+        <h2>More context, more retention.</h2>
+        <div class="wells lg reveal">
+          <div class="well"><b>100<span class="unit">k+</span></b><span>users adopted display options</span></div>
+          <div class="well"><b>+30<span class="unit">%</span></b><span>two-week retention for display option users</span></div>
+          <div class="well"><b>13.1<span class="unit">k</span></b><span>portals on linear trend lines</span></div>
+          <div class="well"><b>11.8<span class="unit">k</span></b><span>portals on logarithmic trend lines</span></div>
+        </div>
+        <div class="prose" style="margin-top:32px">
+          <p>Less engaged users (under 50 hovers a month) who turned on trend lines had 10–13% higher two-week retention than those who did not. Anomaly detection and AI Smart Trends moved into beta in fall 2024, the contextual work set datawells as the library's next priority, and the redesign carried into 2025.</p>
+        </div>
 
-  <section>
-    <div class="wrap next">
-      <a href="report-viewer.html">&larr; Single Report Viewer</a>
-      <a href="index.html#work">All work &rarr;</a>
-    </div>
-  </section>
+        <h3>What I learned</h3>
+        <div class="lessons reveal">
+          <div><b>Say what you won't build.</b><p>Defining "consumer grade" kept the roadmap on context for everyone, not power features for a few.</p></div>
+          <div><b>Guides scale better than designs.</b><p>One clear decision per element let other teams ship display options that look like they belong together.</p></div>
+          <div><b>Services over spaces.</b><p>Building one report configuration for many contexts made the library valuable to every team that shows data.</p></div>
+        </div>
+
+        <a class="next-proj reveal" href="lead-scoring.html">
+          <div><span class="label">Next case study · 01</span><h3>Lead Scoring: AI rule discovery</h3></div>
+          <span class="arr">→</span>
+        </a>
+      </section>
+    </article>
+  </div>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>&copy; 2026 Charlie Kelley</span>
-    <span><a href="mailto:chkelley86@gmail.com">chkelley86@gmail.com</a> · <a href="https://www.linkedin.com/in/charlie-kelley-4b856020">LinkedIn</a> · <a href="Charlie-Kelley-Resume.pdf">Resume</a></span>
+    <div>
+      <span class="label">Let's talk</span>
+      <h2 style="margin-top:12px">Have a messy data problem? <a href="mailto:chkelley86@gmail.com" style="color:var(--accent-ink)">Say hello.</a></h2>
+    </div>
+    <div class="links">
+      <a href="mailto:chkelley86@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/charlie-kelley-4b856020">LinkedIn</a>
+      <a href="Charlie-Kelley-Resume.pdf">Resume</a>
+    </div>
+    <small>© 2026 Charlie Kelley · Ann Arbor, Michigan</small>
   </div>
 </footer>
 
+<script src="assets/v2.js"></script>
 </body>
 </html>

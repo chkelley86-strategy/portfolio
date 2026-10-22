@@ -1,20 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lead Scoring · Charlie Kelley</title>
-  <meta name="description" content="Case study: redesigning HubSpot Lead Scoring to turn marketing signals into sales action.">
+  <meta name="description" content="Case study: rebuilding HubSpot Lead Scoring around reusable AI components.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,30;1,9..144,400,30&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/v2.css">
 </head>
-<body class="cs">
+<body>
 
-<nav class="nav">
+<nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a class="name" href="index.html">Charlie Kelley</a>
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="6" fill="#1B1B1F"/><path d="M5 18 L10 13 L14 15 L20 7" fill="none" stroke="#FAF7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="7" r="2.6" fill="#E0542F"/></svg>
+      Charlie Kelley
+    </a>
     <ul>
       <li><a href="index.html#work">Work</a></li>
       <li><a href="index.html#approach">Approach</a></li>
@@ -26,208 +29,196 @@
 
 <main>
   <header class="cs-hero">
+    <div class="grid-bg" aria-hidden="true"></div>
     <div class="wrap">
-      <p class="eyebrow">Case study · HubSpot · AI</p>
-      <h1>Lead Scoring: AI building blocks that turn marketing signals into sales action</h1>
-      <p class="lead text">Marketers were guessing which signals mattered, and sales teams couldn't act on the scores they saw. I led design for a rebuilt, AI-first Lead Scoring app: modular components that recommend the right rules and explain their impact wherever users need them.</p>
+      <p class="crumbs"><a href="index.html#work">Work</a> / 01 / HubSpot</p>
+      <h1>Lead Scoring: rebuilt around AI, so marketers start from <em class="accent-text">data</em> instead of a blank page</h1>
+      <p class="lead">Two reusable AI components recommend the rules that actually convert and explain each rule's impact. After launch, 17% more scores were created, and 30k users have built 25k scores.</p>
       <dl class="meta">
         <div><dt>Role</dt><dd>Lead product designer</dd></div>
         <div><dt>Team</dt><dd>PM, front-end and back-end tech leads, design</dd></div>
         <div><dt>Timeframe</dt><dd>2025–2026</dd></div>
-        <div><dt>Principle</dt><dd><span class="tag">Nudge with evidence</span></dd></div>
+        <div><dt>Focus</dt><dd>AI recommendations, platform components</dd></div>
       </dl>
+      <div class="tldr reveal">
+        <div><span class="label">Problem</span><p>Marketers guessed which signals mattered, tested scores by hand, and took more than two hours to build a first score.</p></div>
+        <div><span class="label">What I did</span><p>Led design for an AI-first rebuild: AI rule discovery, rule insights, and a modular builder users can enter from anywhere.</p></div>
+        <div><span class="label">Result</span><p>+17% more scores created. 25k scores built by 30k users in the new app.</p></div>
+      </div>
+      <div class="cover reveal">
+        <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Lead scoring · Discover AI rules</span></div><img src="assets/img/ls-discover.webp" alt="Discover AI rules table ranking rules by conversion rate and confidence"></div>
+      </div>
     </div>
   </header>
 
-  <section>
-    <div class="wrap">
-      <div class="stats">
-        <div class="stat"><b>+17%</b><span>more scores created after reducing start-up friction</span></div>
-        <div class="stat"><b>25k</b><span>scores created by 30k users in the new app</span></div>
-        <div class="stat"><b>7</b><span>customers in end-to-end journey research</span></div>
-      </div>
-    </div>
-  </section>
+  <div class="wrap cs-body">
+    <aside class="toc" aria-label="Contents">
+      <span class="label">Contents</span>
+      <ol>
+        <li><a href="#why">Why it mattered</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#decisions">Key decisions</a></li>
+        <li><a href="#impact">Impact</a></li>
+      </ol>
+    </aside>
 
-  <section>
-    <div class="wrap">
-      <div class="ai-callout text">
-        <p class="eyebrow">Where AI shows up</p>
-        <ul class="clean">
-          <li><strong>Discover AI rules:</strong> business intelligence surfaces the rules that actually convert in your portal, ranked by conversion rate and reach.</li>
-          <li><strong>Confidence labels:</strong> every suggested rule shows how much data backs it, from high confidence to "needs more data."</li>
-          <li><strong>Point recommendations:</strong> suggested point values that hit the intended spread of low, medium and high leads.</li>
-          <li><strong>Rule insights:</strong> plain-language explanations of each rule's reach and impact, plus suggestions for similar signals.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <article>
+      <section class="chapter" id="why">
+        <span class="chapter-num">00 · Why it mattered</span>
+        <p class="hook" style="margin-top:16px">A marketer wants to know whether her new lead score works. So she opens her own marketing emails, clicks the links, and watches her contact record to see whether the points go up.</p>
+        <div class="prose">
+          <p>That was a real workaround from our research. It showed the core problem: HubSpot had all the data to tell her which signals mattered, but nothing in the product surfaced it.</p>
+        </div>
+        <div class="needs reveal">
+          <div class="card">
+            <span class="label">Business need</span>
+            <p style="margin-top:8px">AI turned the buyer journey into an hourglass: fewer leads arrive, but they arrive ready to buy. Competitors were marketing instant setup and AI-built models. HubSpot's advantage was native data across the whole customer journey, but users couldn't get to it.</p>
+            <p style="margin-top:12px"><strong>Target:</strong> a first score in under 30 minutes, down from 2+ hours.</p>
+          </div>
+          <div class="card">
+            <span class="label">User need</span>
+            <p style="margin-top:8px">Marketers needed to know which signals actually lead to customers and whether their score worked. Sales needed to see why a lead was prioritized so they could act on it.</p>
+            <blockquote>"You need like a PhD in HubSpot to get things going."</blockquote>
+          </div>
+        </div>
+      </section>
 
-
-  <section>
-    <div class="wrap">
-      <div class="text">
-        <h2>The problem</h2>
-        <p>AI changed the buyer journey from a funnel to an hourglass: fewer leads arrive, but they arrive informed and ready to buy. Prioritizing the right lead at the right time now matters more than volume, but HubSpot's lead scoring couldn't keep up.</p>
-        <p>Competitors were marketing instant setup and AI-built models. HubSpot's advantage was native data across the whole customer journey, but users couldn't get to it. Building a first score took more than two hours.</p>
-      </div>
-      <table class="map">
-        <thead><tr><th>Pain point</th><th>What we heard</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Marketers are guessing.</strong> No good starting point and no guidance on which signals matter.</td><td>"You need like a PhD in HubSpot to get things going."</td></tr>
-          <tr><td><strong>Sales can't act.</strong> Little insight into what drives a score, and manual handoffs.</td><td>"Information is alright, but it's not fully actionable by the people that need to action on it."</td></tr>
-          <tr><td><strong>Teams can't improve.</strong> Results are hard to interpret and iterate on.</td><td>"I just want to make sure that what I'm building works."</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="text">
-        <h2>Research: mapping the whole job</h2>
-        <p>Instead of studying only the builder screen, I mapped the full scoring journey with seven customers, from planning a score to refining it months later. They ranged from a 10-year HubSpot power user to a one-person marketing team.</p>
-      </div>
-      <figure>
-        <img src="assets/img/ls-research.webp" alt="Journey map across Plan, Build, Review and Test, Route to Sales, Downstream, Monitor and Report, and Refine, with sticky notes for challenges and opportunities" loading="lazy">
-        <figcaption>One participant's row of the journey map, across three phases: creating, actioning, and monitoring and refining.</figcaption>
-      </figure>
-      <div class="text">
-        <h3>What we learned</h3>
-        <ul class="clean">
-          <li><strong>Users tested scores by hand.</strong> One marketer opened and clicked her own emails to "see do the scores work." Nothing in the product showed whether a model was right.</li>
-          <li><strong>The handoff to sales was manual.</strong> MQL to SQL moves happened in calls, exported lists and Slack threads about "weird leads." Several sales teams could see the score but didn't use it.</li>
-          <li><strong>Messy data distorted scores.</strong> Students, job seekers and other non-leads inflated engagement, so users kept tweaking rules.</li>
-          <li><strong>People wanted set-and-forget, then a trend.</strong> They wanted to lock a model in and track month-over-month shifts.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="text">
-        <h2>The vision: three hills</h2>
-        <p>With my PM and tech leads, we framed the 2026 vision around one persona, a growth-focused marketer, and three hills. Each hill names who benefits, what they can do, and why it matters. Each also has its own success metric, so the team could ship in phases and measure each one.</p>
-      </div>
-      <table class="map">
-        <thead><tr><th>Hill</th><th>Outcome</th><th>Target</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Easy to start</strong></td><td>Build a goal-aligned score with no expertise, using expert templates and rationale nudges</td><td>First score in under 30 minutes, down from 2+ hours</td></tr>
-          <tr><td><strong>Confident to use</strong></td><td>Sales sees why a lead is prioritized and acts on it in every tool</td><td>Higher downstream activation of scores</td></tr>
-          <tr><td><strong>Built to evolve</strong></td><td>Verify and improve the model against real outcomes</td><td>Users re-engage after score feedback</td></tr>
-        </tbody>
-      </table>
-      <p class="muted text">We also decided what not to do: no advanced multi-step ML training and no lead-object scoring.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="text">
-        <h2>Design: AI building blocks, not a linear wizard</h2>
-        <p>The old Lead Scoring app worked in a silo: one long form you had to fill in top to bottom. Real users don't work that way. They start from scratch, come back months later, or dig into one rule and want to find better ones. So instead of a single flow, we designed <strong>modular AI components</strong> that can be called from different parts of the experience.</p>
-        <p>Research pointed to two moments where users stalled. The <strong>cold start</strong>: a blank builder and hundreds of properties, with no idea which few rules would move the needle. And the <strong>knowledge plateau</strong>: existing users stuck to obvious rules and never found high-converting signals outside their assumptions. The same two components solve both.</p>
-      </div>
-
-      <figure class="diagram">
-        <svg viewBox="0 0 960 300" role="img" aria-label="Discover AI rules and Rule insights are modular components. Discover is reached from a blank score and from rule insights, so the flow loops instead of running in a line.">
-          <defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="d-head"/></marker></defs>
-          <g class="d-edge">
-            <path d="M240 85H372" marker-end="url(#arw)"/>
-            <path d="M600 85H732" marker-end="url(#arw)"/>
-            <path d="M840 120V202" marker-end="url(#arw)"/>
-            <path d="M740 237H490V128" marker-end="url(#arw)"/>
-          </g>
-          <g><rect x="40" y="50" width="200" height="70" rx="10" class="d-box"/>
-            <text x="140" y="80" class="d-name">Blank score</text><text x="140" y="101" class="d-sub">New empty state</text></g>
-          <g><rect x="380" y="50" width="220" height="70" rx="10" class="d-box d-accent"/>
-            <text x="490" y="80" class="d-name">Discover AI rules</text><text x="490" y="101" class="d-sub">Ranked by impact &amp; confidence</text></g>
-          <g><rect x="740" y="50" width="200" height="70" rx="10" class="d-box"/>
-            <text x="840" y="80" class="d-name">Score builder</text><text x="840" y="101" class="d-sub">Rules in plain language</text></g>
-          <g><rect x="740" y="202" width="200" height="70" rx="10" class="d-box d-accent"/>
-            <text x="840" y="232" class="d-name">Rule insights</text><text x="840" y="253" class="d-sub">Reach, impact, points</text></g>
-          <text x="306" y="74" class="d-label">Start with AI</text>
-          <text x="666" y="74" class="d-label">Add rules</text>
-          <text x="854" y="166" class="d-label d-start">Open on any rule</text>
-          <text x="615" y="227" class="d-label">Find similar rules</text>
-          <text x="40" y="30" class="d-title">Two reusable AI components, many ways in</text>
-        </svg>
-        <figcaption>Discover AI rules and Rule insights are standalone components. Users reach Discover from a blank score <em>or</em> from a rule's insights, so the experience loops instead of forcing one path.</figcaption>
-      </figure>
-
-      <div class="text">
-        <h3>1. A starting point instead of an empty page</h3>
-        <p>New users used to land on a blank page. The new empty state gives three ways in, and the most prominent is <strong>Discover AI rules</strong>.</p>
-      </div>
-      <figure>
-        <img src="assets/img/ls-start.webp" alt="Empty score state with three ways to start: add an event group, add a property group, or discover AI rules" loading="lazy">
-        <figcaption><strong>The new empty state.</strong> Three ways to start, with AI front and center.</figcaption>
-      </figure>
-
-      <div class="text">
-        <h3>2. Discover AI rules: every possible rule, ranked</h3>
-        <p>Rather than make users hunt through hundreds of properties, AI lists every possible rule for the chosen goal and ranks it by impact: how many contacts it reaches, how many converted, and the conversion rate. Each rule carries a <strong>confidence label</strong>, so users know how much data backs the suggestion. They select the rules they want and add them to the score in one step.</p>
-      </div>
-      <figure>
-        <img src="assets/img/ls-discover.webp" alt="Discover rules table listing rules with conversion, reach, conversion rate and confidence" loading="lazy">
-        <figcaption><strong>Discover AI rules</strong> from a blank score: the rules that actually convert in your portal, with confidence labels.</figcaption>
-      </figure>
-
-      <div class="text">
-        <h3>3. Rule insights: see what each rule is doing</h3>
-        <p>Once rules are in the score, users can open insights on any of them. Insights show how many leads a rule has reached, its impact on the overall score, and the average point distribution. That replaces the old habit of testing a score by hand.</p>
-        <p>The first design put insights in a panel on the right. From there, users could jump to the same Discover component, now filtered to rules similar to the one they were looking at.</p>
-      </div>
-      <div class="pair">
-        <figure>
-          <img src="assets/img/ls-insights-v1.webp" alt="Early design: rule insights and point impact in a panel on the right side of the builder" loading="lazy">
-          <figcaption><strong>First iteration:</strong> insights in a right-hand panel.</figcaption>
+      <section class="chapter" id="research">
+        <span class="chapter-num">01 · What the research showed</span>
+        <h2>The builder wasn't where scoring failed. The months around it were.</h2>
+        <div class="prose">
+          <p>I mapped the full scoring journey with seven customers, from planning a score to refining it months later, instead of studying only the builder screen.</p>
+        </div>
+        <figure class="fig wide reveal">
+          <div class="plate"><img src="assets/img/ls-research.webp" alt="Journey map row for one research participant across creating, actioning, and monitoring a lead score" loading="lazy"></div>
+          <figcaption><span class="label">Fig. 01</span><span>One participant's row of the journey map across creating, actioning, and monitoring and refining.</span></figcaption>
         </figure>
-        <figure>
-          <img src="assets/img/ls-discover-panel.webp" alt="Discover rules opened as a side panel from rule insights, listing similar workflows ranked by conversion and confidence" loading="lazy">
-          <figcaption><strong>Same component, second entry point:</strong> Discover opened from insights to find similar rules.</figcaption>
+        <div class="cards three reveal">
+          <div class="card"><span class="big-num">01</span><h4>The cold start</h4><p>A blank builder and hundreds of properties. Users had no idea which few rules would move the needle.</p></div>
+          <div class="card"><span class="big-num">02</span><h4>The knowledge plateau</h4><p>Existing users stuck to obvious rules and never found high-converting signals outside their assumptions.</p></div>
+          <div class="card"><span class="big-num">03</span><h4>Testing by hand</h4><p>Nothing showed whether a score worked, so users clicked their own emails to check.</p></div>
+        </div>
+      </section>
+
+      <section class="chapter" id="decisions">
+        <span class="chapter-num">02 · Key decisions</span>
+        <h2>Reusable AI components, not a single linear flow.</h2>
+        <div class="prose">
+          <p>The old app was one long form you filled in top to bottom. Instead, we designed reusable AI components that can be called from different parts of the experience.</p>
+        </div>
+        <figure class="fig diagram reveal">
+          <div class="plate">
+            <svg viewBox="0 0 820 440" role="img" aria-label="A loop of three reusable components: Discover AI rules leads to the score builder, the builder opens rule insights, and insights lead back to Discover to find similar rules. A blank score enters the loop at Discover.">
+              <defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="d-head"/></marker></defs>
+              <g class="d-edge">
+                <path d="M230 85H490" marker-end="url(#arw)"/>
+                <path d="M635 105.1A150 150 0 0 1 710 235" marker-end="url(#arw)"/>
+                <path d="M635 364.9A150 150 0 0 1 485 364.9" marker-end="url(#arw)"/>
+                <path d="M410 235A150 150 0 0 1 485 105.1" marker-end="url(#arw)"/>
+              </g>
+              <g><rect x="40" y="55" width="190" height="60" rx="30" class="d-box"/>
+                <text x="135" y="82" class="d-name">Blank score</text><text x="135" y="101" class="d-sub">New empty state</text></g>
+              <g><circle cx="560" cy="85" r="64" class="d-box d-accent"/>
+                <text x="560" y="72" class="d-name">Discover</text><text x="560" y="92" class="d-name">AI rules</text><text x="560" y="113" class="d-sub">Ranked by impact</text></g>
+              <g><circle cx="690" cy="310" r="64" class="d-box"/>
+                <text x="690" y="297" class="d-name">Score</text><text x="690" y="317" class="d-name">builder</text><text x="690" y="338" class="d-sub">In plain language</text></g>
+              <g><circle cx="430" cy="310" r="64" class="d-box d-accent"/>
+                <text x="430" y="297" class="d-name">Rule</text><text x="430" y="317" class="d-name">insights</text><text x="430" y="338" class="d-sub">Reach &amp; impact</text></g>
+              <text x="360" y="72" class="d-label">Start with AI</text>
+              <text x="722" y="150" class="d-label d-start">Add rules</text>
+              <text x="560" y="412" class="d-label">Open insights on any rule</text>
+              <text x="398" y="150" class="d-label d-end">Find similar rules</text>
+              <text x="560" y="230" class="d-sub">Reusable components:</text>
+              <text x="560" y="248" class="d-sub">a loop, not a line</text>
+            </svg>
+          </div>
+          <figcaption><span class="label">Fig. 02</span><span>Users reach Discover AI rules from a blank score or from a rule's insights, so the experience loops instead of forcing one path.</span></figcaption>
         </figure>
-      </div>
 
-      <div class="text">
-        <h3>4. The final design</h3>
-        <p>After rounds of user feedback and working through technical limits, insights moved inline, directly under the rule they describe. Users see reach, average points and the distribution without losing their place, and "View similar workflows" opens Discover AI rules right where they are.</p>
-      </div>
-      <figure>
-        <img src="assets/img/ls-insights.webp" alt="Final rule insights shown inline under a workflow rule: contacts reached, average points per contact and distribution of points" loading="lazy">
-        <figcaption><strong>Final:</strong> inline rule insights with a plain-language summary, reach, average points and distribution, plus a link to similar rules.</figcaption>
-      </figure>
-    </div>
-  </section>
+        <div class="decision reveal">
+          <span class="label">Decision 01</span>
+          <h3>Start from AI-ranked rules, not an empty page</h3>
+          <dl class="pes">
+            <div><dt>Problem</dt><dd>New users landed on an empty page with hundreds of properties to choose from.</dd></div>
+            <div><dt>Evidence</dt><dd>The cold start was the first place users stalled. Building a first score took more than two hours.</dd></div>
+            <div><dt>Solution</dt><dd>A new empty state with three ways in, led by <strong>Discover AI rules</strong>: every possible rule for the chosen goal, ranked by reach, conversions and conversion rate, each with a confidence label.</dd></div>
+          </dl>
+          <div class="compare">
+            <figure class="fig" style="margin:0"><span class="tag">Step 1 · Empty state</span><div class="plate"><img src="assets/img/ls-start.webp" alt="New lead scoring empty state with three ways to start, led by Discover AI rules" loading="lazy"></div><figcaption>Three ways in, with AI first.</figcaption></figure>
+            <figure class="fig after" style="margin:0"><span class="tag">Step 2 · Discover AI rules</span><div class="plate"><img src="assets/img/ls-discover.webp" alt="Discover AI rules table ranked by conversion rate with confidence labels" loading="lazy"></div><figcaption>The rules that actually convert in your portal, with confidence labels.</figcaption></figure>
+          </div>
+        </div>
 
-  <section>
-    <div class="wrap text">
-      <h2>Impact</h2>
-      <p>Lowering the friction to start a score led to 17% more scores being created. In total, 30k users have created 25k scores in the new app. Usage data also showed where to focus next: many users who start a score don't turn it on, which is exactly the gap the preview and confidence work is built to close.</p>
-      <h2 style="margin-top:1.6em">What I learned</h2>
-      <ul class="clean">
-        <li><strong>Map the whole job, not the screen.</strong> The builder wasn't where scoring failed. The handoff and the months after were.</li>
-        <li><strong>Confidence is a design material.</strong> Users didn't need more rules. They needed to see that their rules worked.</li>
-        <li><strong>Hills keep a big vision shippable.</strong> Three outcomes, each with its own metric, let us phase the work without losing the story.</li>
-      </ul>
-    </div>
-  </section>
+        <div class="decision reveal">
+          <span class="label">Decision 02</span>
+          <h3>Build components, not a wizard</h3>
+          <dl class="pes">
+            <div><dt>Problem</dt><dd>A linear setup flow only helped on day one. Existing users plateaued on obvious rules.</dd></div>
+            <div><dt>Evidence</dt><dd>Users came back months later, or dug into one rule and wanted to find better ones.</dd></div>
+            <div><dt>Solution</dt><dd>Made Discover AI rules a standalone component. The same ranked table opens from a blank score and from any rule's insights, filtered to similar high-converting rules.</dd></div>
+          </dl>
+          <figure class="fig">
+            <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Score builder · Discover similar rules</span></div><img src="assets/img/ls-discover-panel.webp" alt="Discover AI rules opened in a panel from a rule's insights to find similar rules" loading="lazy"></div>
+            <figcaption><span class="label">Fig. 03</span><span>Same component, second entry point: Discover opened from a rule's insights to find similar rules.</span></figcaption>
+          </figure>
+        </div>
 
-  <section>
-    <div class="wrap next">
-      <a href="index.html#work">&larr; All work</a>
-      <a href="ai-insights.html">Next: AI Insights in Reporting &rarr;</a>
-    </div>
-  </section>
+        <div class="decision reveal">
+          <span class="label">Decision 03 · The pivot</span>
+          <h3>Show each rule's impact right where users work</h3>
+          <dl class="pes">
+            <div><dt>Problem</dt><dd>Nothing showed whether a rule was doing anything, so users tested scores by hand.</dd></div>
+            <div><dt>Evidence</dt><dd>Users clicked their own emails to check scores, and wanted to verify their model before turning it on.</dd></div>
+            <div><dt>Solution</dt><dd><strong>Rule insights</strong> for every rule: how many leads it reaches, its impact on the overall score, and the average point distribution, explained in plain language.</dd></div>
+          </dl>
+          <p class="note"><span class="label">What changed</span>The first design put insights in a panel on the right side of the builder. After user feedback and technical limits, insights moved inline, directly under the rule they describe, so users never lose their place.</p>
+          <div class="compare">
+            <figure class="fig" style="margin:0"><span class="tag">First iteration</span><div class="plate"><img src="assets/img/ls-insights-v1.webp" alt="First iteration: rule insights in a side panel" loading="lazy"></div><figcaption>Insights in a side panel.</figcaption></figure>
+            <figure class="fig after" style="margin:0"><span class="tag">Final</span><div class="plate"><img src="assets/img/ls-insights.webp" alt="Final design: rule insights shown inline under each rule" loading="lazy"></div><figcaption>Insights inline, under the rule they describe.</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" id="impact">
+        <span class="chapter-num">03 · Impact</span>
+        <h2>Less friction to start, more scores built.</h2>
+        <div class="wells lg reveal">
+          <div class="well"><b>+17<span class="unit">%</span></b><span>more scores created after reducing the friction to start</span></div>
+          <div class="well"><b>25<span class="unit">k</span></b><span>scores created in the new app</span></div>
+          <div class="well"><b>30<span class="unit">k</span></b><span>users building scores</span></div>
+        </div>
+
+        <h3>What I learned</h3>
+        <div class="lessons reveal">
+          <div><b>Map the whole job, not the screen.</b><p>The builder wasn't where scoring failed. The handoff and the months after were.</p></div>
+          <div><b>Confidence is a design material.</b><p>Users didn't need more rules. They needed to see that their rules worked.</p></div>
+          <div><b>Components outlast flows.</b><p>Building Discover and Insights as reusable pieces let one design serve new and returning users.</p></div>
+        </div>
+
+        <a class="next-proj reveal" href="ai-insights.html">
+          <div><span class="label">Next case study · 02</span><h3>AI Insights in Reporting</h3></div>
+          <span class="arr">→</span>
+        </a>
+      </section>
+    </article>
+  </div>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>&copy; 2026 Charlie Kelley</span>
-    <span><a href="mailto:chkelley86@gmail.com">chkelley86@gmail.com</a> · <a href="https://www.linkedin.com/in/charlie-kelley-4b856020">LinkedIn</a> · <a href="Charlie-Kelley-Resume.pdf">Resume</a></span>
+    <div>
+      <span class="label">Let's talk</span>
+      <h2 style="margin-top:12px">Have a messy data problem? <a href="mailto:chkelley86@gmail.com" style="color:var(--accent-ink)">Say hello.</a></h2>
+    </div>
+    <div class="links">
+      <a href="mailto:chkelley86@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/charlie-kelley-4b856020">LinkedIn</a>
+      <a href="Charlie-Kelley-Resume.pdf">Resume</a>
+    </div>
+    <small>© 2026 Charlie Kelley · Ann Arbor, Michigan</small>
   </div>
 </footer>
 
+<script src="assets/v2.js"></script>
 </body>
 </html>
